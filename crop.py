@@ -5,6 +5,7 @@ files = ['./Pictures/'+f for f in os.listdir('./Pictures/')]
 
 for f in files:
     im = Image.open(f)
-    out = im.crop((0,0,210,430))
+    s = im.size
+    out = im.crop((0,0,s[0]-4,s[1]-4))
     out.save(f,'JPEG')
 
