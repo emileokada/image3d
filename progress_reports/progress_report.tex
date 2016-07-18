@@ -1,0 +1,99 @@
+\documentclass[a4paper]{article}
+
+\def\npart {SUROP}
+\def\nterm {Summer 2016}
+\def\ncourse {Shadow tomography}
+
+\input{header}
+
+\begin{document}
+\title{
+    SUROP \\ Progress report
+}
+\title{Summer Undergraduate Research Opportunities}
+\date{July, 2016}
+\author{Emile Okada \\ University of Cambridge}
+\maketitle
+
+\newpage
+
+\setcounter{section}{0}
+\section{Week 1}
+\subsection{Reading}
+I started the week reading Chapter 1 section 2 of Charles L. Epstein's "Introduction to the Mathematics of Medical Imaging".
+It covered how to reconstuct a 2d convex object from the shadows of an object. 
+The idea is fairly straighforward. 
+If $h(\theta)$ is the shadow function as described in the book (essentially the distance of the support line in direction $(-\sin(\theta),\cos(\theta))$ from the origin), then the convex hull can be parameterized by
+\begin{equation}
+    (x(\theta),y(\theta)) = h(\theta)\cdot(\cos(\theta),\sin(\theta))+h'(\theta)\cdot(-\sin(\theta),\cos(\theta)).
+\end{equation}
+This idea can be extended to 3d by considering slices of the object. 
+Fix some vector {\bfseries v} and then consider the collection of planes perpendicular to {\bfseries v}. 
+In each of the planes one can use the 2d method to construct a 2d convex hull of the intersection of the object with the plane. 
+Stringing all these 2d slices together then gives a rough reconstruction of the 3d object from its shadows.
+
+I also spent some time reading up on the TV transform and scale spaces, to get a rough idea of which project I'd like to do. 
+I ended up going with the tomography project, but spend roughly 1.5 days doing reading for the other project.
+\subsubsection{Remaining tasks}
+The above method only allows for 'slicewise convex' reconstructions. While better than convex, this doesn't ustilize all the data available from the shadows e.g. see the rabit ears below. We know the two ears are two separate 'blobs' and we can tell this from the shadow, but this information is nonetheless lost in the reconstruction. I need to try to find ways on how to improve on this.
+
+\subsection{Coding}
+On Thursday I started coding. 
+To have some examples to work with I used the Wolfram Mathematica ExampleData function to obtain a 3D model of a rabit.
+
+\begin{figure}[H]
+  \centering
+    \includegraphics[width=0.4\textwidth]{figures/3D_rabit.png}
+    \caption{3D model of a rabit from Mathematica ExampleData.}
+  \label{fig:f2}
+\end{figure}
+
+I then took its orthogonal projection and binarized the image to obtain shadows of the rabit from 10 different angles.
+
+\begin{figure}[H]
+    \begin{floatrow}
+        \ffigbox{\includegraphics[scale = 0.5]{figures/space1.jpg}}{\caption{Shadow of rabit with $\theta=0$}\label{fig:err1}}
+        \ffigbox{\includegraphics[scale = 0.5]{figures/space5.jpg}}{\caption{Shadow of rabit with $\theta=\pi/2$}\label{fig:err2}}
+    \end{floatrow}
+\end{figure}
+
+I then finished writing the code for reconstructing the object from its shadows in python (see page \pageref{alg:shadow}) on Friday.
+
+\begin{figure}[H]
+  \centering
+    \includegraphics[width=0.7\textwidth]{figures/rabit.png}
+    \caption{Reconstruction of the rabit using the script on page \pageref{alg:shadow}.}
+  \label{fig:f2}
+\end{figure}
+
+\subsubsection{Challenges}
+I had some problems originally with taking the derivative of the shadow function since the input was a bit noisy.
+To fix this problem I convolved the data with a discrete gaussian (binomial distribution) to smooth out the noise.
+This worked well with the example data. 
+However, it remains to see whether it will work well enough for the actual real life pictures which will probably be a lot more noisy.
+
+\subsubsection{Remaining tasks}
+There are currently a lot more data points than I need. At the moment I'm calculating the shadow function fow each row of the image matrix.
+This results in a lot of points which causes the rendering to take some time.
+I can probably get away with a lot fewer points in the z direction.
+I also plan on adding a polygonal mesh so it looks a bit nicer.
+Lastly, I should probably also do some smoothing in the z direction to fix the sudden cutoffs that tend to occur when the variations in the 3D object are smaller than the 'resolution' in the z-direction.
+
+\subsection{Building}
+I haven't begun building yet, but I now have a rough idea of the teh set should look like. 
+At the moment I'm thinking of creating a simple turn table (rotating platform) on which a person stands. I'll then place some bright lights in front for them and a big white sheet of paper behind on which to shine their shadow. 
+A camera is then placed behind the paper to capture the shadows.
+
+\subsubsection{Remaining tasks}
+I'll create a proper design this week and make a basic prototype on a smaller scale hopefully by next week.
+
+\newpage
+\section{Code}
+\subsection{3D reconstruction from shadows}
+\label{alg:shadow}
+\lstinputlisting[language=Matlab]{../shadow_function.py}
+\subsection{Miscellaneous functions}
+\label{alg:misc}
+\lstinputlisting[language=Matlab]{../misc.py}
+\end{document}
+

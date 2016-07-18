@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2015.3.22)  18 JUL 2016 09:53
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2015.3.22)  18 JUL 2016 10:40
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**core_project_1.tex
-(./core_project_1.tex
+**progress_report.tex
+(./progress_report.tex
 LaTeX2e <2014/05/01>
 Babel <3.9k> and hyphenation patterns for 78 languages loaded.
 (/usr/local/texlive/2014/texmf-dist/tex/latex/base/article.cls
@@ -964,8 +964,12 @@ File: pgflibraryarrows.code.tex 2013/09/23 v3.0.0 (rcs-revision 1.16)
 File: tikzlibrarypositioning.code.tex 2008/10/06 v3.0.0 (rcs-revision 1.7)
 ) (/usr/local/texlive/2014/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarycalc.code.tex
 File: tikzlibrarycalc.code.tex 2013/07/15 v3.0.0 (rcs-revision 1.9)
-)) (./core_project_1.aux)
-\openout1 = `core_project_1.aux'.
+)) (./progress_report.aux
+
+LaTeX Warning: Label `fig:f2' multiply defined.
+
+)
+\openout1 = `progress_report.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 9.
 LaTeX Font Info:    ... okay on input line 9.
@@ -997,9 +1001,9 @@ Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 LaTeX Info: Redefining \ref on input line 9.
 LaTeX Info: Redefining \pageref on input line 9.
 LaTeX Info: Redefining \nameref on input line 9.
- (./core_project_1.out) (./core_project_1.out)
+ (./progress_report.out) (./progress_report.out)
 \@outlinefile=\write4
-\openout4 = `core_project_1.out'.
+\openout4 = `progress_report.out'.
 
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: floatrow package is loaded.
@@ -1105,16 +1109,64 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <6> on input line 17.
  [1
 
-{/usr/local/texlive/2014/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] (/usr/local/texlive/2014/texmf-dist/tex/latex/listings/lstlang1.sty
+{/usr/local/texlive/2014/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] <figures/3D_rabit.png, id=59, 526.96875pt x 526.96875pt>
+File: figures/3D_rabit.png Graphic file (type png)
+ <use figures/3D_rabit.png>
+Package pdftex.def Info: figures/3D_rabit.png used on input line 46.
+(pdftex.def)             Requested size: 137.9979pt x 137.99767pt.
+ <figures/space1.jpg, id=61, 357.335pt x 221.82875pt>
+File: figures/space1.jpg Graphic file (type jpg)
+ <use figures/space1.jpg>
+Package pdftex.def Info: figures/space1.jpg used on input line 55.
+(pdftex.def)             Requested size: 178.66705pt x 110.9141pt.
+
+Overfull \hbox (11.16705pt too wide) in paragraph at lines 55--55
+ [][] 
+ []
+
+File: figures/space1.jpg Graphic file (type jpg)
+<use figures/space1.jpg>
+Package pdftex.def Info: figures/space1.jpg used on input line 55.
+(pdftex.def)             Requested size: 178.66705pt x 110.9141pt.
+
+Overfull \hbox (11.16705pt too wide) in paragraph at lines 55--55
+ [][] 
+ []
+
+<figures/space5.jpg, id=62, 357.335pt x 221.82875pt>
+File: figures/space5.jpg Graphic file (type jpg)
+ <use figures/space5.jpg>
+Package pdftex.def Info: figures/space5.jpg used on input line 56.
+(pdftex.def)             Requested size: 178.66705pt x 110.9141pt.
+
+Overfull \hbox (11.16705pt too wide) in paragraph at lines 56--56
+ [][] 
+ []
+
+File: figures/space5.jpg Graphic file (type jpg)
+<use figures/space5.jpg>
+Package pdftex.def Info: figures/space5.jpg used on input line 56.
+(pdftex.def)             Requested size: 178.66705pt x 110.9141pt.
+
+Overfull \hbox (11.16705pt too wide) in paragraph at lines 56--56
+ [][] 
+ []
+
+[2 <./figures/3D_rabit.png>] <figures/rabit.png, id=77, 403.9893pt x 265.2309pt>
+File: figures/rabit.png Graphic file (type png)
+ <use figures/rabit.png>
+Package pdftex.def Info: figures/rabit.png used on input line 64.
+(pdftex.def)             Requested size: 241.49895pt x 158.54887pt.
+ [3 <./figures/space1.jpg> <./figures/space5.jpg> <./figures/rabit.png>] [4] (/usr/local/texlive/2014/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2014/03/04 1.5c listings language file
 )
-Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on input line 44.
+Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on input line 94.
  (../shadow_function.py
 Overfull \hbox (21.00372pt too wide) in paragraph at lines 15--16
 [][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
-[2]
+
 Overfull \hbox (9.0036pt too wide) in paragraph at lines 19--20
 [][][][][][][][][][][][][][][][][][][][][][][][] 
  []
@@ -1134,7 +1186,7 @@ Overfull \hbox (249.00604pt too wide) in paragraph at lines 34--36
 [][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
-
+[5]
 Overfull \hbox (9.0036pt too wide) in paragraph at lines 55--57
 [][][][][][][][][][][][][][][][][][][] 
  []
@@ -1151,7 +1203,7 @@ File: omslmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Font shape `OMS/lmr/m/n' in size <10> not available
 (Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 66.
- [3]
+
 Overfull \hbox (21.00372pt too wide) in paragraph at lines 69--71
 [][][][][][][][][][][][][][][][][][][][][] 
  []
@@ -1191,29 +1243,48 @@ Overfull \hbox (117.0047pt too wide) in paragraph at lines 90--92
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
-) [4]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 45.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 45.
- (./core_project_1.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 45.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 45.
-Package rerunfilecheck Info: File `core_project_1.out' has not changed.
-(rerunfilecheck)             Checksum: B2149FEF842786D3194ABA58D2A48614;311.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 45.
+) (../misc.py [6]
+Overfull \hbox (63.00415pt too wide) in paragraph at lines 8--10
+[][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (75.00427pt too wide) in paragraph at lines 18--20
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (267.00623pt too wide) in paragraph at lines 29--30
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+) [7]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 98.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 98.
+ (./progress_report.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 98.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 98.
+Package rerunfilecheck Info: File `progress_report.out' has not changed.
+(rerunfilecheck)             Checksum: 5BDDB8F7CC459602A05D81C3DE979D48;692.
+
+
+LaTeX Warning: There were multiply-defined labels.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 98.
  ) 
 Here is how much of TeX's memory you used:
- 31427 strings out of 493117
- 619113 string characters out of 6135433
- 797355 words of memory out of 5000000
- 34270 multiletter control sequences out of 15000+600000
- 66911 words of font info for 82 fonts, out of 8000000 for 9000
+ 31548 strings out of 493117
+ 620876 string characters out of 6135433
+ 802264 words of memory out of 5000000
+ 34323 multiletter control sequences out of 15000+600000
+ 67575 words of font info for 90 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 57i,12n,65p,10417b,2632s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 57i,12n,65p,10418b,2632s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2014/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/local/texlive/2014/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/local/texlive/2014/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}</usr/local/texlive/2014/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/lm/lmr17.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/lm/lmri10.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/lm/lmsy7.pfb>
-Output written on core_project_1.pdf (4 pages, 163606 bytes).
+Output written on progress_report.pdf (7 pages, 567778 bytes).
 PDF statistics:
- 208 PDF objects out of 1000 (max. 8388607)
- 191 compressed objects within 2 object streams
- 105 named destinations out of 1000 (max. 500000)
- 23101 words of extra memory for PDF output out of 24883 (max. 10000000)
+ 296 PDF objects out of 1000 (max. 8388607)
+ 268 compressed objects within 3 object streams
+ 147 named destinations out of 1000 (max. 500000)
+ 23161 words of extra memory for PDF output out of 24883 (max. 10000000)
 
