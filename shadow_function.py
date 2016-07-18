@@ -17,7 +17,7 @@ class image3d:
         #self.aspect = self.width/self.height
         self.aspect = 1
         self.shadow_list = [[] for i in range(self.height)]
-        self.x, self.y, self.z = (), (), ()
+        self.x, self.y, self.z = [], [], []
 
         #Determine the shadow function
         for f in files:
@@ -35,10 +35,9 @@ class image3d:
 
             #Add points
             coords = misc.transpose(self.convex_hull(i))
-            if sum(coords[0]) != 0 and sum(coords[1]) != 0:
-                self.x = self.x + coords[0]
-                self.y = self.y + coords[1]
-                self.z = self.z + coords[2]
+            self.x.append(coords[0])
+            self.y.append(coords[1])
+            self.z.append(coords[2])
 
         #Create figure
         fig = plt.figure()
@@ -48,6 +47,9 @@ class image3d:
         plt.ylim([-90,90])
         plt.show()
         
+    @property
+    def coordinates(self):
+        return [self.x, self.y, self.z]
 
     def preprocess(self,img):
         """Convert image to greyscale and binarize image"""

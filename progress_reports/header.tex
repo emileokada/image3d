@@ -1,0 +1,158 @@
+% Imports
+
+\usepackage[pdftex,hidelinks]{hyperref}
+\usepackage{lipsum}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{booktabs}
+\usepackage{caption}
+\usepackage{enumitem}
+\usepackage{graphicx}
+\usepackage{mathtools}
+\usepackage{microtype}
+\usepackage{multirow}
+\usepackage{siunitx}
+\usepackage{tabularx}
+\usepackage{tikz}
+\usepackage{todo}
+\usepackage{fancyhdr}
+\usepackage{ifthen}
+\usepackage[normalem]{ulem}
+\usepackage{pdflscape}
+\usepackage{lmodern}
+\usepackage{listings}
+\usepackage{floatrow}%
+
+\pagestyle{fancyplain}
+\lhead{\emph{\nouppercase{\leftmark}}}
+\ifx \nextra \undefined 
+  \rhead{\ifthenelse{\value{page}=1}{}{\npart\ \ncourse}}
+\else
+  \rhead{\ifthenelse{\value{page}=1}{}{\npart\ \ncourse\ (\nextra)}}
+\fi
+\usetikzlibrary{arrows}
+\usetikzlibrary{decorations.markings}
+\usetikzlibrary{positioning}
+\usetikzlibrary{calc}
+
+% Theorems
+\theoremstyle{definition}
+\newtheorem*{aim}{Aim}
+\newtheorem*{axiom}{Axiom}
+\newtheorem*{claim}{Claim}
+\newtheorem*{cor}{Corollary}
+\newtheorem*{defi}{Definition}
+\newtheorem*{eg}{Example}
+\newtheorem*{fact}{Fact}
+\newtheorem*{law}{Law}
+\newtheorem*{lemma}{Lemma}
+\newtheorem*{notation}{Notation}
+\newtheorem*{prop}{Proposition}
+\newtheorem*{thm}{Theorem}
+
+% Latex constructs
+\newcommand{\mb}[1]{\mathbf{#1}}
+\newcommand{\note}{\vspace{3pt}\noindent \emph{Note}:\;}
+
+\renewcommand{\labelitemi}{--}
+\renewcommand{\labelitemii}{$\circ$}
+\renewcommand{\labelenumi}{(\roman{*})}
+
+\let\stdpart\part
+\renewcommand\part{\newpage\stdpart}
+
+\let\stdsection\section
+\renewcommand\section{\stdsection}
+
+\newcommand{\img}[2][]{\begin{center}\centering\includegraphics[#1]{images/#2.pdf}\end{center}}
+
+% Strike through
+\def\st{\bgroup \ULdepth=-.55ex \ULset}
+
+% Maths symbols
+\newcommand{\bra}{\langle}
+\newcommand{\ket}{\rangle}
+
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Prob}{\mathbb{P}}
+\renewcommand{\P}{\mathbb{P}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\cU}{\mathcal{U}}
+
+\DeclareMathOperator{\im}{Im}
+\DeclareMathOperator{\re}{Re}
+
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\diag}{diag}
+\DeclareMathOperator{\rank}{rank}
+\DeclareMathOperator{\card}{card}
+\DeclareMathOperator{\spn}{span}
+
+\DeclareMathOperator{\erf}{erf}
+\DeclareMathOperator{\erfc}{erfc}
+
+\DeclareMathOperator{\ord}{ord}
+\DeclareMathOperator{\Sym}{Sym}
+
+\DeclareMathOperator{\sgn}{sgn}
+\DeclareMathOperator{\orb}{orb}
+\DeclareMathOperator{\stab}{stab}
+\DeclareMathOperator{\ccl}{ccl}
+
+\DeclareMathOperator{\lcm}{lcm}
+\DeclareMathOperator{\hcf}{hcf}
+
+\DeclareMathOperator{\Int}{Int}
+\DeclareMathOperator{\id}{id}
+
+\DeclareMathOperator{\betaD}{beta}
+\DeclareMathOperator{\gammaD}{gamma}
+\DeclareMathOperator{\Poisson}{Poisson}
+\DeclareMathOperator{\binomial}{binomial}
+\DeclareMathOperator{\multinomial}{multinomial}
+\DeclareMathOperator{\Bernoulli}{Bernoulli}
+\DeclareMathOperator{\like}{like}
+
+\DeclareMathOperator{\var}{var}
+\DeclareMathOperator{\cov}{cov}
+\DeclareMathOperator{\bias}{bias}
+\DeclareMathOperator{\mse}{mse}
+\DeclareMathOperator{\corr}{corr}
+
+\DeclareMathOperator{\otp}{otp}
+\DeclareMathOperator{\dom}{dom}
+
+\newcommand{\GL}{\mathrm{GL}}
+\newcommand{\SL}{\mathrm{SL}}
+\newcommand{\Or}{\mathrm{O}}
+\newcommand{\SO}{\mathrm{SO}}
+\newcommand{\U}{\mathrm{U}}
+\newcommand{\SU}{\mathrm{SU}}
+
+\renewcommand{\d}{\mathrm{d}}
+
+\tikzset{->/.style = {decoration={markings,
+                                  mark=at position 1 with {\arrow[scale=2]{latex'}}},
+                      postaction={decorate}}}
+\tikzset{<-/.style = {decoration={markings,
+                                  mark=at position 0 with {\arrowreversed[scale=2]{latex'}}},
+                      postaction={decorate}}}
+\tikzset{<->/.style = {decoration={markings,
+                                   mark=at position 0 with {\arrowreversed[scale=2]{latex'}},
+                                   mark=at position 1 with {\arrow[scale=2]{latex'}}},
+                       postaction={decorate}}}
+\tikzset{->-/.style = {decoration={markings,
+                                   mark=at position #1 with {\arrow[scale=2]{latex'}}},
+                       postaction={decorate}}}
+\tikzset{-<-/.style = {decoration={markings,
+                                   mark=at position #1 with {\arrowreversed[scale=2]{latex'}}},
+                       postaction={decorate}}}
+
+\tikzset{circ/.style = {fill, circle, inner sep = 0, minimum size = 3}}
