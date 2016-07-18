@@ -21,16 +21,16 @@
 \section{Week 1}
 \subsection{Reading}
 I started the week reading Chapter 1 section 2 of Charles L. Epstein's "Introduction to the Mathematics of Medical Imaging".
-It covered how to reconstuct a 2d convex object from the shadows of an object. 
+It covered how to reconstuct a 2D convex object from the shadows of an object. 
 The idea is fairly straighforward. 
 If $h(\theta)$ is the shadow function as described in the book (essentially the distance of the support line in direction $(-\sin(\theta),\cos(\theta))$ from the origin), then the convex hull can be parameterized by
 \begin{equation}
     (x(\theta),y(\theta)) = h(\theta)\cdot(\cos(\theta),\sin(\theta))+h'(\theta)\cdot(-\sin(\theta),\cos(\theta)).
 \end{equation}
-This idea can be extended to 3d by considering slices of the object. 
+This idea can be extended to 3D by considering slices of the object. 
 Fix some vector {\bfseries v} and then consider the collection of planes perpendicular to {\bfseries v}. 
-In each of the planes one can use the 2d method to construct a 2d convex hull of the intersection of the object with the plane. 
-Stringing all these 2d slices together then gives a rough reconstruction of the 3d object from its shadows.
+In each of the planes one can use the 2D method to construct a 2D convex hull of the intersection of the object with the plane. 
+Stringing all these 2D slices together then gives a rough reconstruction of the 3D object from its shadows.
 
 I also spent some time reading up on the TV transform and scale spaces, to get a rough idea of which project I'd like to do. 
 I ended up going with the tomography project, but spend roughly 1.5 days doing reading for the other project.
@@ -78,6 +78,13 @@ This results in a lot of points which causes the rendering to take some time.
 I can probably get away with a lot fewer points in the z direction.
 I also plan on adding a polygonal mesh so it looks a bit nicer.
 Lastly, I should probably also do some smoothing in the z direction to fix the sudden cutoffs that tend to occur when the variations in the 3D object are smaller than the 'resolution' in the z-direction.
+
+\begin{figure}[H]
+  \centering
+    \includegraphics[width=0.7\textwidth]{figures/ear_and_back_cutoff.png}
+    \caption{Cutoff of rabits ears. Can probably be fixed by smoothing the data in the z direction.}
+  \label{fig:f2}
+\end{figure}
 
 \subsection{Building}
 I haven't begun building yet, but I now have a rough idea of the teh set should look like. 

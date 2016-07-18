@@ -355,6 +355,9 @@ INPUT ./figures/space5.jpg
 INPUT figures/rabit.png
 INPUT ./figures/rabit.png
 INPUT ./figures/rabit.png
+INPUT figures/ear_and_back_cutoff.png
+INPUT ./figures/ear_and_back_cutoff.png
+INPUT ./figures/ear_and_back_cutoff.png
 INPUT ../shadow_function.py
 INPUT /usr/local/texlive/2014/texmf-dist/tex/latex/listings/lstlang1.sty
 INPUT /usr/local/texlive/2014/texmf-dist/tex/latex/listings/lstlang1.sty
