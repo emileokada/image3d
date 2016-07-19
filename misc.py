@@ -1,6 +1,12 @@
 from __future__ import division
 import math
 
+def pad_left(l,k):
+    return l[-k:] + l
+
+def pad_right(l,k):
+    return l + l[:k]
+
 def transpose(l):
     return zip(*l)
 

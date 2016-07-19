@@ -4,6 +4,7 @@ from PIL import Image
 import numpy as np
 import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
+from mpl_toolkits.mplot3d.art3d import Poly3DCollection
 
 import math
 import re
@@ -14,7 +15,8 @@ class image3d:
     def __init__(self,files):
         (self.width, self.height) = Image.open(files[0]).size
         self.resolution = len(files)
-        #self.aspect = self.width/self.height
+        #self.vertical_pixel_spacing = self.height//40
+        self.vertical_pixel_spacing = self.height//60
         self.aspect = 1
         self.shadow_list = [[] for i in range(self.height)]
         self.x, self.y, self.z = [], [], []
@@ -39,9 +41,59 @@ class image3d:
             self.y.append(coords[1])
             self.z.append(coords[2])
 
+        #Smooth data vertically
         self.x = transpose(map(lambda column: list_convolve(column,binomial_density(4)),transpose(self.x)))
         self.y = transpose(map(lambda column: list_convolve(column,binomial_density(4)),transpose(self.y)))
 
+        #Delete points of the form (0,0,z_coord)
+        self.clean_up()
+
+        self.sparse_x = self.x[::self.vertical_pixel_spacing]
+        self.sparse_y = self.y[::self.vertical_pixel_spacing]
+        self.sparse_z = self.z[::self.vertical_pixel_spacing]
+
+        #Create figure
+        fig = plt.figure()
+        ax = fig.add_subplot(111,projection='3d')
+        ax.scatter(self.flat_x,self.flat_y,self.flat_z,marker='.')
+        collection = Poly3DCollection(self.polygon_vertices, linewidths=1, alpha=0.5)
+        collection.set_facecolor([0.5,0.5,1])
+        ax.add_collection3d(collection)
+        plt.xlim([-90,90])
+        plt.ylim([-90,90])
+        plt.show()
+        
+    @property
+    def flat_x(self):
+        return [x_coord for row in self.sparse_x for x_coord in row]
+
+    @property
+    def flat_y(self):
+        return [y_coord for row in self.sparse_y for y_coord in row]
+
+    @property
+    def flat_z(self):
+        return [z_coord for row in self.sparse_z for z_coord in row]
+
+    @property
+    def polygon_vertices(self):
+        vertex_list = map(lambda x,y,z: zip(pad_right(x,1),pad_right(y,1),pad_right(z,1)), self.sparse_x, self.sparse_y, self.sparse_z)
+        poly_list = []
+        for i in range(len(self.sparse_x) - 1):
+            for j in range(2*self.resolution):
+                vertex_position = [(i,j), (i,j+1), (i+1,j+1), (i+1,j), (i,j)]
+                poly_list.append([vertex_list[m][n] for m,n in vertex_position])
+
+        return poly_list
+
+    def preprocess(self,img):
+        """Convert image to greyscale and binarize image"""
+
+        img = img.convert('L')
+        out = img.point(lambda i: 255 if i>255/2 else 0)
+        return out
+
+    def clean_up(self):
         counter = 0
         for i in range(self.height):
             k = i - counter
@@ -50,33 +102,6 @@ class image3d:
                 del self.y[k]
                 del self.z[k]
                 counter = counter + 1
-
-        #Create figure
-        fig = plt.figure()
-        ax = fig.add_subplot(111,projection='3d')
-        ax.scatter(self.flat_x,self.flat_y,self.flat_z,marker='.')
-        plt.xlim([-90,90])
-        plt.ylim([-90,90])
-        plt.show()
-        
-    @property
-    def flat_x(self):
-        return [x_coord for row in self.x for x_coord in row]
-
-    @property
-    def flat_y(self):
-        return [y_coord for row in self.y for y_coord in row]
-
-    @property
-    def flat_z(self):
-        return [z_coord for row in self.z for z_coord in row]
-
-    def preprocess(self,img):
-        """Convert image to greyscale and binarize image"""
-
-        img = img.convert('L')
-        out = img.point(lambda i: 255 if i>255/2 else 0)
-        return out
 
     def img_to_array(self,img):
         """Convert Image object to matrix"""
