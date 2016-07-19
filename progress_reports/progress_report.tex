@@ -22,20 +22,22 @@
 \subsection{Reading}
 I started the week reading Chapter 1 section 2 of Charles L. Epstein's "Introduction to the Mathematics of Medical Imaging".
 It covered how to reconstuct a 2D convex object from the shadows of an object. 
-The idea is fairly straighforward. 
 If $h(\theta)$ is the shadow function as described in the book (essentially the distance of the support line in direction $(-\sin(\theta),\cos(\theta))$ from the origin), then the convex hull can be parameterized by
+
 \begin{equation}
     (x(\theta),y(\theta)) = h(\theta)\cdot(\cos(\theta),\sin(\theta))+h'(\theta)\cdot(-\sin(\theta),\cos(\theta)).
 \end{equation}
-This idea can be extended to 3D by considering slices of the object. 
+
+We can extend this idea to 3D by considering slices of the object. 
 Fix some vector {\bfseries v} and then consider the collection of planes perpendicular to {\bfseries v}. 
 In each of the planes one can use the 2D method to construct a 2D convex hull of the intersection of the object with the plane. 
 Stringing all these 2D slices together then gives a rough reconstruction of the 3D object from its shadows.
 
 I also spent some time reading up on the TV transform and scale spaces, to get a rough idea of which project I'd like to do. 
 I ended up going with the tomography project, but spend roughly 1.5 days doing reading for the other project.
+
 \subsubsection{Remaining tasks}
-The above method only allows for 'slicewise convex' reconstructions. While better than convex, this doesn't ustilize all the data available from the shadows e.g. see the rabit ears below. We know the two ears are two separate 'blobs' and we can tell this from the shadow, but this information is nonetheless lost in the reconstruction. I need to try to find ways on how to improve on this.
+The above method only allows for 'slicewise convex' reconstructions. While better than convex, this doesn't ustilize all the data available from the shadows e.g. see the rabit ears below. We know the two ears are two separate 'blobs' and we can tell this from the shadow, but this information is nonetheless lost in the reconstruction. I will try to find ways on how to improve on this (so that e.g. if we scan a human we can see two legs rather than one large blob).
 
 \subsection{Coding}
 On Thursday I started coding. 
@@ -57,7 +59,7 @@ I then took its orthogonal projection and binarized the image to obtain shadows 
     \end{floatrow}
 \end{figure}
 
-I then finished writing the code for reconstructing the object from its shadows in python (see page \pageref{alg:shadow}) on Friday.
+I then finished writing the code for reconstructing the object from its shadows in python (see page \pageref{alg:shadow} or my \href{https://github.com/emileokada/image3d}{github}) on Friday.
 
 \begin{figure}[H]
   \centering
@@ -87,7 +89,7 @@ Lastly, I should probably also do some smoothing in the z direction to fix the s
 \end{figure}
 
 \subsection{Building}
-I haven't begun building yet, but I now have a rough idea of the teh set should look like. 
+I haven't begun building yet, but I now have a rough idea of the the set should look like. 
 At the moment I'm thinking of creating a simple turn table (rotating platform) on which a person stands. I'll then place some bright lights in front for them and a big white sheet of paper behind on which to shine their shadow. 
 A camera is then placed behind the paper to capture the shadows.
 
@@ -98,9 +100,9 @@ I'll create a proper design this week and make a basic prototype on a smaller sc
 \section{Code}
 \subsection{3D reconstruction from shadows}
 \label{alg:shadow}
-\lstinputlisting[language=Matlab]{../shadow_function.py}
+\lstinputlisting[language=Python]{../shadow_function.py}
 \subsection{Miscellaneous functions}
 \label{alg:misc}
-\lstinputlisting[language=Matlab]{../misc.py}
+\lstinputlisting[language=Python]{../misc.py}
 \end{document}
 

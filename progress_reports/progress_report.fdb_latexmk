@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1468835337 "progress_report.tex" "progress_report.pdf" "progress_report" 1468835340
+["pdflatex"] 1468836950 "progress_report.tex" "progress_report.pdf" "progress_report" 1468836952
   "../misc.py" 1468574857 817 8dc7bbab0ce3133a3bdd7eea7d5359af ""
   "../shadow_function.py" 1468834994 3105 19b7e8d0f56113cac17334748258a142 ""
   "/usr/local/texlive/2014/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc" 1202520719 2405 5dcf2c1b967ee25cc46c58cd52244aed ""
@@ -214,12 +214,12 @@
   "figures/rabit.png" 1468834994 108895 50f3499757007cf321e4ae7bda4067da ""
   "figures/space1.jpg" 1468834994 4361 ef1c9dd6463b550a3c2300f1a59e47dc ""
   "figures/space5.jpg" 1468834994 4002 659c032653282863455eb6ce206341f3 ""
-  "header.tex" 1468834994 4516 5a02708c0f07bfcfb7b14a98c6b91235 ""
-  "progress_report.aux" 1468835339 3477 e9b34a1b9fa5f3265d51a86441774e61 ""
-  "progress_report.out" 1468835339 692 5bddb8f7cc459602a05d81c3de979d48 ""
-  "progress_report.tex" 1468835337 5289 fbdbac298b52887b253fe953bfd2a110 ""
+  "header.tex" 1468836365 4522 2bfc7128c3dd5473a200594da9a058b8 ""
+  "progress_report.aux" 1468836952 3477 e9b34a1b9fa5f3265d51a86441774e61 ""
+  "progress_report.out" 1468836952 692 5bddb8f7cc459602a05d81c3de979d48 ""
+  "progress_report.tex" 1468836945 5391 2bbe6a35434cd92c501ba3efcc5e9e02 ""
   (generated)
-  "progress_report.out"
   "progress_report.pdf"
-  "progress_report.aux"
+  "progress_report.out"
   "progress_report.log"
+  "progress_report.aux"

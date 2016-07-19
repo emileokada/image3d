@@ -8,7 +8,7 @@ from mpl_toolkits.mplot3d import Axes3D
 import math
 import re
 import os
-import misc
+from misc import *
 
 class image3d:
     def __init__(self,files):
@@ -31,25 +31,45 @@ class image3d:
 
         for i in range(self.height):
             #Smooth the data by convolving with discrete Gaussian (i.e. binomial distribution)
-            self.shadow_list[i] = misc.list_convolve(self.shadow_list[i],misc.binomial_density(10))
+            self.shadow_list[i] = list_convolve(self.shadow_list[i],binomial_density(14))
 
             #Add points
-            coords = misc.transpose(self.convex_hull(i))
+            coords = transpose(self.convex_hull(i))
             self.x.append(coords[0])
             self.y.append(coords[1])
             self.z.append(coords[2])
 
+        self.x = transpose(map(lambda column: list_convolve(column,binomial_density(4)),transpose(self.x)))
+        self.y = transpose(map(lambda column: list_convolve(column,binomial_density(4)),transpose(self.y)))
+
+        counter = 0
+        for i in range(self.height):
+            k = i - counter
+            if sum(self.x[k]) == 0 and sum(self.y[k]) == 0:
+                del self.x[k]
+                del self.y[k]
+                del self.z[k]
+                counter = counter + 1
+
         #Create figure
         fig = plt.figure()
         ax = fig.add_subplot(111,projection='3d')
-        ax.scatter(self.x,self.y,self.z,marker='.')
+        ax.scatter(self.flat_x,self.flat_y,self.flat_z,marker='.')
         plt.xlim([-90,90])
         plt.ylim([-90,90])
         plt.show()
         
     @property
-    def coordinates(self):
-        return [self.x, self.y, self.z]
+    def flat_x(self):
+        return [x_coord for row in self.x for x_coord in row]
+
+    @property
+    def flat_y(self):
+        return [y_coord for row in self.y for y_coord in row]
+
+    @property
+    def flat_z(self):
+        return [z_coord for row in self.z for z_coord in row]
 
     def preprocess(self,img):
         """Convert image to greyscale and binarize image"""
@@ -83,7 +103,7 @@ class image3d:
         """Calculate the points belonging to the convex hull of the particular level set"""
 
         theta = np.linspace(0,2*math.pi,2*self.resolution)
-        shadow_derivative = misc.differentiate(self.shadow_list[z_coord], math.pi/self.resolution)
+        shadow_derivative = differentiate(self.shadow_list[z_coord], math.pi/self.resolution)
         return [(self.aspect*(h*math.cos(t)-s*math.sin(t)),self.aspect*(h*math.sin(t)+s*math.cos(t)),self.height-z_coord) for t, h, s in zip(theta,self.shadow_list[z_coord],shadow_derivative)]
 
 files = ['./Pictures/'+f for f in os.listdir('./Pictures/')]
