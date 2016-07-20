@@ -10,23 +10,25 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[      5773,        159]
-NotebookOptionsPosition[      5319,        138]
-NotebookOutlinePosition[      5656,        153]
-CellTagsIndexPosition[      5613,        150]
+NotebookDataLength[      9690,        251]
+NotebookOptionsPosition[      9101,        225]
+NotebookOutlinePosition[      9457,        241]
+CellTagsIndexPosition[      9414,        238]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
 Notebook[{
 Cell[BoxData[
- RowBox[{"cow", "=", 
-  RowBox[{"ExampleData", "[", 
-   RowBox[{
-    RowBox[{"{", 
-     RowBox[{"\"\<Geometry3D\>\"", ",", "\"\<SpaceShuttle\>\""}], "}"}], ",", 
-    "\"\<GraphicsComplex\>\""}], "]"}]}]], "Input",
+ RowBox[{
+  RowBox[{"cow", "=", 
+   RowBox[{"ExampleData", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\"\<Geometry3D\>\"", ",", "\"\<StanfordBunny\>\""}], "}"}], 
+     ",", "\"\<GraphicsComplex\>\""}], "]"}]}], ";"}]], "Input",
  CellChangeTimes->{{3.677319788785255*^9, 3.677319806071403*^9}, {
-  3.677319836531641*^9, 3.6773198367949247`*^9}}],
+   3.677319836531641*^9, 3.6773198367949247`*^9}, 3.67747563578111*^9, {
+   3.677564649828309*^9, 3.677564650038432*^9}, 3.6775650529814053`*^9}],
 
 Cell[CellGroupData[{
 
@@ -36,7 +38,7 @@ Cell[BoxData[
    RowBox[{
     RowBox[{"Export", "[", 
      RowBox[{
-      RowBox[{"\"\</Users/emileokada/Documents/Summer/space\>\"", "<>", 
+      RowBox[{"\"\</Users/emileokada/Documents/Summer/pictures/space\>\"", "<>", 
        RowBox[{"ToString", "[", 
         RowBox[{"#2", "[", 
          RowBox[{"[", "1", "]"}], "]"}], "]"}], "<>", "\"\<.jpg\>\""}], ",", 
@@ -60,8 +62,7 @@ Cell[BoxData[
             RowBox[{"GeometricTransformation", "[", 
              RowBox[{"cow", ",", 
               RowBox[{"RotationTransform", "[", 
-               RowBox[{
-                RowBox[{"\[Pi]", "/", "2"}], ",", 
+               RowBox[{"0", ",", 
                 RowBox[{"{", 
                  RowBox[{"0", ",", "1", ",", "0"}], "}"}]}], "]"}]}], "]"}], 
             ",", 
@@ -79,51 +80,137 @@ Cell[BoxData[
           RowBox[{
            RowBox[{"{", 
             RowBox[{
-             RowBox[{"-", "5"}], ",", "5"}], "}"}], ",", 
+             RowBox[{"-", "0.2"}], ",", "0.2"}], "}"}], ",", 
            RowBox[{"{", 
             RowBox[{
-             RowBox[{"-", "5"}], ",", "5"}], "}"}], ",", 
+             RowBox[{"-", "0.2"}], ",", "0.2"}], "}"}], ",", 
            RowBox[{"{", 
-            RowBox[{
-             RowBox[{"-", "10"}], ",", "10"}], "}"}]}], "}"}]}]}], "]"}], ",", 
+            RowBox[{"0", ",", "0.25"}], "}"}]}], "}"}]}]}], "]"}], ",", 
       RowBox[{"{", 
-       RowBox[{"k", ",", 
-        RowBox[{"-", "1"}], ",", "1", ",", "0.1"}], "}"}]}], "]"}]}]}], 
+       RowBox[{"k", ",", "0", ",", 
+        RowBox[{"1", "-", "0.1"}], ",", "0.1"}], "}"}]}], "]"}]}]}], 
   "]"}]], "Input",
  CellChangeTimes->{{3.677319742123385*^9, 3.677319772801543*^9}, 
    3.6773198235916567`*^9, {3.67731986919606*^9, 3.677319965856879*^9}, {
    3.677320054574028*^9, 3.6773201869234037`*^9}, {3.677320308435251*^9, 
    3.677320359064786*^9}, {3.677320441523786*^9, 3.677320442788494*^9}, {
-   3.677390115745805*^9, 3.6773901163352003`*^9}}],
+   3.677390115745805*^9, 3.6773901163352003`*^9}, {3.6774756411157217`*^9, 
+   3.677475646056672*^9}, {3.6775611318148413`*^9, 3.6775611356180763`*^9}, {
+   3.677561248144424*^9, 3.6775612577851057`*^9}, {3.677563769023481*^9, 
+   3.677563773148718*^9}, {3.677564555824774*^9, 3.677564557065052*^9}, {
+   3.677564625341366*^9, 3.677564625717695*^9}, 3.6775646979858303`*^9, {
+   3.6775651418598347`*^9, 3.677565147278051*^9}, 3.6778223941703253`*^9, {
+   3.677912073206704*^9, 3.67791207404568*^9}}],
 
 Cell[BoxData[
  RowBox[{"{", 
-  RowBox[{"\<\"/Users/emileokada/Documents/Summer/space1.jpg\"\>", 
-   ",", "\<\"/Users/emileokada/Documents/Summer/space2.jpg\"\>", 
-   ",", "\<\"/Users/emileokada/Documents/Summer/space3.jpg\"\>", 
-   ",", "\<\"/Users/emileokada/Documents/Summer/space4.jpg\"\>", 
-   ",", "\<\"/Users/emileokada/Documents/Summer/space5.jpg\"\>", 
-   ",", "\<\"/Users/emileokada/Documents/Summer/space6.jpg\"\>", 
-   ",", "\<\"/Users/emileokada/Documents/Summer/space7.jpg\"\>", 
-   ",", "\<\"/Users/emileokada/Documents/Summer/space8.jpg\"\>", 
-   ",", "\<\"/Users/emileokada/Documents/Summer/space9.jpg\"\>", 
-   ",", "\<\"/Users/emileokada/Documents/Summer/space10.jpg\"\>", 
-   ",", "\<\"/Users/emileokada/Documents/Summer/space11.jpg\"\>", 
-   ",", "\<\"/Users/emileokada/Documents/Summer/space12.jpg\"\>", 
-   ",", "\<\"/Users/emileokada/Documents/Summer/space13.jpg\"\>", 
-   ",", "\<\"/Users/emileokada/Documents/Summer/space14.jpg\"\>", 
-   ",", "\<\"/Users/emileokada/Documents/Summer/space15.jpg\"\>", 
-   ",", "\<\"/Users/emileokada/Documents/Summer/space16.jpg\"\>", 
-   ",", "\<\"/Users/emileokada/Documents/Summer/space17.jpg\"\>", 
-   ",", "\<\"/Users/emileokada/Documents/Summer/space18.jpg\"\>", 
-   ",", "\<\"/Users/emileokada/Documents/Summer/space19.jpg\"\>", 
-   ",", "\<\"/Users/emileokada/Documents/Summer/space20.jpg\"\>", 
-   ",", "\<\"/Users/emileokada/Documents/Summer/space21.jpg\"\>"}], 
+  RowBox[{"\<\"/Users/emileokada/Documents/Summer/Pictures/space1.jpg\"\>", 
+   ",", "\<\"/Users/emileokada/Documents/Summer/Pictures/space2.jpg\"\>", 
+   ",", "\<\"/Users/emileokada/Documents/Summer/Pictures/space3.jpg\"\>", 
+   ",", "\<\"/Users/emileokada/Documents/Summer/Pictures/space4.jpg\"\>", 
+   ",", "\<\"/Users/emileokada/Documents/Summer/Pictures/space5.jpg\"\>", 
+   ",", "\<\"/Users/emileokada/Documents/Summer/Pictures/space6.jpg\"\>", 
+   ",", "\<\"/Users/emileokada/Documents/Summer/Pictures/space7.jpg\"\>", 
+   ",", "\<\"/Users/emileokada/Documents/Summer/Pictures/space8.jpg\"\>", 
+   ",", "\<\"/Users/emileokada/Documents/Summer/Pictures/space9.jpg\"\>", 
+   ",", "\<\"/Users/emileokada/Documents/Summer/Pictures/space10.jpg\"\>"}], 
   "}"}]], "Output",
  CellChangeTimes->{{3.677320079893648*^9, 3.6773200962844276`*^9}, 
    3.677320127182867*^9, {3.677320157507085*^9, 3.6773201890091467`*^9}, 
    3.677320353745222*^9, 3.677320447289871*^9, 3.677390004193272*^9, 
-   3.6773901187863617`*^9}]
+   3.6773901187863617`*^9, 3.67747565383314*^9, 3.6775611466776114`*^9, 
+   3.67756126181498*^9, {3.677563774384892*^9, 3.677563791823907*^9}, 
+   3.677564559193193*^9, 3.677564627618753*^9, 3.677564699881001*^9, 
+   3.6775647537651577`*^9, 3.677565152154923*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", 
+  RowBox[{
+   RowBox[{"Graphics3D", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"EdgeForm", "[", "None", "]"}], ",", 
+       RowBox[{"GeometricTransformation", "[", 
+        RowBox[{
+         RowBox[{"GeometricTransformation", "[", 
+          RowBox[{"cow", ",", 
+           RowBox[{"RotationTransform", "[", 
+            RowBox[{"0", ",", 
+             RowBox[{"{", 
+              RowBox[{"0", ",", "1", ",", "0"}], "}"}]}], "]"}]}], "]"}], ",", 
+         RowBox[{"RotationTransform", "[", 
+          RowBox[{
+           RowBox[{"k", " ", "Pi"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"0", ",", "0", ",", "1"}], "}"}]}], "]"}]}], "]"}]}], 
+      "}"}], ",", 
+     RowBox[{"ImageSize", "\[Rule]", "1000"}], ",", " ", 
+     RowBox[{"ViewPoint", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"0", ",", "Infinity", ",", "0"}], "}"}]}], ",", 
+     RowBox[{"PlotRange", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"-", "0.2"}], ",", "0.2"}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"-", "0.2"}], ",", "0.2"}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"0", ",", "0.25"}], "}"}]}], "}"}]}]}], "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"k", ",", "0", ",", "1"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.6775644891112633`*^9, 3.677564545790406*^9}, {
+  3.677564630446693*^9, 3.6775646865097647`*^9}, {3.67756506223536*^9, 
+  3.677565132258142*^9}, {3.6778223464978533`*^9, 3.677822369651311*^9}}],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`k$$ = 0.9420000000000001, Typeset`show$$ = 
+    True, Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{
+      Hold[$CellContext`k$$], 0, 1}}, Typeset`size$$ = {1000., {310., 315.}}, 
+    Typeset`update$$ = 0, Typeset`initDone$$, Typeset`skipInitDone$$ = 
+    True, $CellContext`k$364235$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, "Variables" :> {$CellContext`k$$ = 0}, 
+      "ControllerVariables" :> {
+        Hold[$CellContext`k$$, $CellContext`k$364235$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> Graphics3D[{
+         EdgeForm[None], 
+         GeometricTransformation[
+          GeometricTransformation[$CellContext`cow, 
+           RotationTransform[0, {0, 1, 0}]], 
+          RotationTransform[$CellContext`k$$ Pi, {0, 0, 1}]]}, ImageSize -> 
+        1000, ViewPoint -> {0, Infinity, 0}, 
+        PlotRange -> {{-0.2, 0.2}, {-0.2, 0.2}, {0, 0.25}}], 
+      "Specifications" :> {{$CellContext`k$$, 0, 1}}, "Options" :> {}, 
+      "DefaultOptions" :> {}],
+     ImageSizeCache->{1045., {354., 359.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{{3.6775644948151073`*^9, 3.67756454618821*^9}, {
+   3.677564630772601*^9, 3.677564686815764*^9}, {3.677565063565278*^9, 
+   3.677565132598502*^9}, 3.677822357117424*^9}]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -136,9 +223,10 @@ Cell[BoxData["\<\"/Users/emileokada\"\>"], "Output",
  CellChangeTimes->{3.677320383553822*^9}]
 }, Open  ]]
 },
-WindowSize->{1278, 751},
+WindowSize->{1280, 751},
 WindowMargins->{{0, Automatic}, {Automatic, 0}},
-FrontEndVersion->"10.3 for Linux x86 (64-bit) (December 10, 2015)",
+FrontEndVersion->"10.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (December 4, \
+2014)",
 StyleDefinitions->"Default.nb"
 ]
 (* End of Notebook Content *)
@@ -152,14 +240,18 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[558, 20, 344, 8, 32, "Input"],
+Cell[558, 20, 464, 10, 28, "Input"],
 Cell[CellGroupData[{
-Cell[927, 32, 2425, 64, 121, "Input"],
-Cell[3355, 98, 1690, 27, 253, "Output"]
+Cell[1047, 34, 2829, 68, 97, "Input"],
+Cell[3879, 104, 1279, 19, 97, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[5082, 130, 124, 2, 32, "Input"],
-Cell[5209, 134, 94, 1, 32, "Output"]
+Cell[5195, 128, 1580, 41, 80, "Input"],
+Cell[6778, 171, 2049, 41, 730, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8864, 217, 124, 2, 28, "Input"],
+Cell[8991, 221, 94, 1, 28, "Output"]
 }, Open  ]]
 }
 ]

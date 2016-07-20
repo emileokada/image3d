@@ -1,7 +1,7 @@
 from PIL import Image
 import os, sys
 
-files = ['./Pictures/'+f for f in os.listdir('./Pictures/')]
+files = ['./pictures/'+f for f in os.listdir('./pictures/')]
 
 for f in files:
     im = Image.open(f)

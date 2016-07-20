@@ -363,10 +363,10 @@ INPUT /usr/local/texlive/2014/texmf-dist/tex/latex/listings/lstlang1.sty
 INPUT /usr/local/texlive/2014/texmf-dist/tex/latex/listings/lstlang1.sty
 INPUT ../shadow_function.py
 INPUT ../shadow_function.py
-INPUT /usr/local/texlive/2014/texmf-dist/tex/latex/lm/omllmr.fd
-INPUT /usr/local/texlive/2014/texmf-dist/tex/latex/lm/omllmr.fd
 INPUT /usr/local/texlive/2014/texmf-dist/tex/latex/lm/omslmr.fd
 INPUT /usr/local/texlive/2014/texmf-dist/tex/latex/lm/omslmr.fd
+INPUT /usr/local/texlive/2014/texmf-dist/tex/latex/lm/omllmr.fd
+INPUT /usr/local/texlive/2014/texmf-dist/tex/latex/lm/omllmr.fd
 INPUT ../misc.py
 INPUT ../misc.py
 INPUT ../misc.py

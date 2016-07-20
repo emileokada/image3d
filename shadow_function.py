@@ -131,7 +131,15 @@ class image3d:
         shadow_derivative = differentiate(self.shadow_list[z_coord], math.pi/self.resolution)
         return [(self.aspect*(h*math.cos(t)-s*math.sin(t)),self.aspect*(h*math.sin(t)+s*math.cos(t)),self.height-z_coord) for t, h, s in zip(theta,self.shadow_list[z_coord],shadow_derivative)]
 
-files = ['./Pictures/'+f for f in os.listdir('./Pictures/')]
+    def intersected_area(self,z_coord):
+        self.shadow_list[z_coord]
+
+    def banded_matrix(self,bands):
+        return True
+
+
+
+files = ['./pictures/'+f for f in os.listdir('./pictures/')]
 files = sorted(files, key=lambda x: int(re.search(r'(\d+)\.jpg',x).group(1)))
 
 space_shuttle = image3d(files)
