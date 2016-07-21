@@ -131,11 +131,24 @@ class image3d:
         shadow_derivative = differentiate(self.shadow_list[z_coord], math.pi/self.resolution)
         return [(self.aspect*(h*math.cos(t)-s*math.sin(t)),self.aspect*(h*math.sin(t)+s*math.cos(t)),self.height-z_coord) for t, h, s in zip(theta,self.shadow_list[z_coord],shadow_derivative)]
 
-    def intersected_area(self,z_coord):
+    def in_band(self, theta, m, n, bands):
+        mid = self.width//2
+        d = -(m-mid)*math.sin(theta)+(n-mid)*math.cos(theta)
+        for lower, upper in bands:
+            if lower <= d <= upper:
+                return True
+        return False
+
+        
+    def intersected_area(self,theta,z_coord):
         self.shadow_list[z_coord]
 
     def banded_matrix(self,bands):
+        mat = np.array([[1 if for i in range(self.width)] for j in range(self.width)])
+        for band in bands:
+
         return True
+
 
 
 
