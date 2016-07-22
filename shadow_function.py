@@ -14,11 +14,21 @@ from misc import *
 class image3d:
     def __init__(self,files):
         (self.width, self.height) = Image.open(files[0]).size
+        self.mid = self.width//2
+
         self.resolution = len(files)
-        #self.vertical_pixel_spacing = self.height//40
-        self.vertical_pixel_spacing = self.height//60
+
+        self.vertical_pixel_spacing = self.height//50
+        self.xy_scaling = 5
+
+        self.scaled_width = self.width//self.xy_scaling
+        self.scaled_mid = self.scaled_width//2
+
+        self.xy = self.scaled_mid*0.75
         self.aspect = 1
+
         self.shadow_list = [[] for i in range(self.height)]
+        self.shadow_bands = [[] for i in range(self.height)]
         self.x, self.y, self.z = [], [], []
 
         #Determine the shadow function
@@ -27,40 +37,31 @@ class image3d:
             img = self.preprocess(img)
             img_data = self.img_to_array(img)
             for i, row in enumerate(img_data):
-                (first, last) = self.read_value(row)
-                self.shadow_list[i].insert(len(self.shadow_list[i])//2,first)
-                self.shadow_list[i].append(last)
+                if i % self.vertical_pixel_spacing == 0:
+                    self.shadow_bands[i].append(self.read_bands(row))
 
         for i in range(self.height):
-            #Smooth the data by convolving with discrete Gaussian (i.e. binomial distribution)
-            self.shadow_list[i] = list_convolve(self.shadow_list[i],binomial_density(14))
+                if i % self.vertical_pixel_spacing == 0:
+                    #Add points
+                    #coords = self.get_coords(self.intersected_area(i),i)
+                    coords = self.get_coords(self.morphological_perimeter(self.intersected_area(i)),i)
+                    self.x.append(coords[0])
+                    self.y.append(coords[1])
+                    self.z.append(coords[2])
 
-            #Add points
-            coords = transpose(self.convex_hull(i))
-            self.x.append(coords[0])
-            self.y.append(coords[1])
-            self.z.append(coords[2])
-
-        #Smooth data vertically
-        self.x = transpose(map(lambda column: list_convolve(column,binomial_density(4)),transpose(self.x)))
-        self.y = transpose(map(lambda column: list_convolve(column,binomial_density(4)),transpose(self.y)))
-
-        #Delete points of the form (0,0,z_coord)
-        self.clean_up()
-
-        self.sparse_x = self.x[::self.vertical_pixel_spacing]
-        self.sparse_y = self.y[::self.vertical_pixel_spacing]
-        self.sparse_z = self.z[::self.vertical_pixel_spacing]
+        self.sparse_x = self.x
+        self.sparse_y = self.y
+        self.sparse_z = self.z
 
         #Create figure
         fig = plt.figure()
         ax = fig.add_subplot(111,projection='3d')
         ax.scatter(self.flat_x,self.flat_y,self.flat_z,marker='.')
-        collection = Poly3DCollection(self.polygon_vertices, linewidths=1, alpha=0.5)
-        collection.set_facecolor([0.5,0.5,1])
-        ax.add_collection3d(collection)
-        plt.xlim([-90,90])
-        plt.ylim([-90,90])
+        #collection = Poly3DCollection(self.polygon_vertices, linewidths=1, alpha=0.5)
+        #collection.set_facecolor([0.5,0.5,1])
+        #ax.add_collection3d(collection)
+        plt.xlim([-self.xy,self.xy])
+        plt.ylim([-self.xy,self.xy])
         plt.show()
         
     @property
@@ -75,33 +76,12 @@ class image3d:
     def flat_z(self):
         return [z_coord for row in self.sparse_z for z_coord in row]
 
-    @property
-    def polygon_vertices(self):
-        vertex_list = map(lambda x,y,z: zip(pad_right(x,1),pad_right(y,1),pad_right(z,1)), self.sparse_x, self.sparse_y, self.sparse_z)
-        poly_list = []
-        for i in range(len(self.sparse_x) - 1):
-            for j in range(2*self.resolution):
-                vertex_position = [(i,j), (i,j+1), (i+1,j+1), (i+1,j), (i,j)]
-                poly_list.append([vertex_list[m][n] for m,n in vertex_position])
-
-        return poly_list
-
     def preprocess(self,img):
         """Convert image to greyscale and binarize image"""
 
         img = img.convert('L')
-        out = img.point(lambda i: 255 if i>255/2 else 0)
+        out = img.point(lambda i: 0 if i>255/2 else 1)
         return out
-
-    def clean_up(self):
-        counter = 0
-        for i in range(self.height):
-            k = i - counter
-            if sum(self.x[k]) == 0 and sum(self.y[k]) == 0:
-                del self.x[k]
-                del self.y[k]
-                del self.z[k]
-                counter = counter + 1
 
     def img_to_array(self,img):
         """Convert Image object to matrix"""
@@ -110,44 +90,53 @@ class image3d:
         (w,h) = img.size
         return [l[w*i:w*(i+1)] for i in range(h)]
 
-    def read_value(self,img_row):
-        """Find shadow function value for a particular row"""
+    def read_bands(self,img_row):
+        differences = [t-s for s,t in zip(img_row,img_row[1:])]
+        left_edges = [i+1-self.mid for i,el in enumerate(differences) if el == 1]
+        right_edges = [i-self.mid for i,el in enumerate(differences) if el == -1]
 
-        mid_point = len(img_row)//2
-        try:
-            first = mid_point - img_row.index(0)
-        except ValueError:
-            first = 0
-        try:
-            last = len(img_row) - 1 - img_row[::-1].index(0) - mid_point
-        except ValueError:
-            last = 0
-        return (first, last)
+        if len(left_edges)>len(right_edges):
+            right_edges.append(len(img_row)-1)
+        elif len(left_edges)<len(right_edges):
+            left_edges.append(0)
 
-    def convex_hull(self,z_coord):
-        """Calculate the points belonging to the convex hull of the particular level set"""
-
-        theta = np.linspace(0,2*math.pi,2*self.resolution)
-        shadow_derivative = differentiate(self.shadow_list[z_coord], math.pi/self.resolution)
-        return [(self.aspect*(h*math.cos(t)-s*math.sin(t)),self.aspect*(h*math.sin(t)+s*math.cos(t)),self.height-z_coord) for t, h, s in zip(theta,self.shadow_list[z_coord],shadow_derivative)]
+        if len(left_edges) == len(right_edges):
+            return zip(left_edges, right_edges)
+        return []
 
     def in_band(self, theta, m, n, bands):
-        mid = self.width//2
-        d = -(m-mid)*math.sin(theta)+(n-mid)*math.cos(theta)
+        d = -(m-self.scaled_mid)*math.sin(theta)+(n-self.scaled_mid)*math.cos(theta)
         for lower, upper in bands:
-            if lower <= d <= upper:
+            if lower <= self.xy_scaling*d <= upper:
                 return True
         return False
 
+    def banded_matrix(self,theta,bands):
+        return np.array([[1 if self.in_band(theta,i,j,bands) else 0 for i in range(self.scaled_width)] for j in range(self.scaled_width)])
+
+    def intersected_area(self,z_coord):
+        print z_coord
+        intersection = np.array([[1 for i in range(self.scaled_width)] for j in range(self.scaled_width)])
+        for i, bands in enumerate(self.shadow_bands[z_coord]):
+            intersection = intersection * self.banded_matrix(math.pi*i/self.resolution,bands)
+        return intersection
+
+    def get_coords(self,matrix,z_coord):
+        xy = map(list,np.array(np.nonzero(matrix))-self.scaled_mid) 
+        return xy + [[self.height-z_coord for i in range(len(xy[0]))]]
         
-    def intersected_area(self,theta,z_coord):
-        self.shadow_list[z_coord]
-
-    def banded_matrix(self,bands):
-        mat = np.array([[1 if for i in range(self.width)] for j in range(self.width)])
-        for band in bands:
-
-        return True
+    def morphological_perimeter(self,matrix):
+        perimeter_matrix = [[0 for i in range(self.scaled_width)] for j in range(self.scaled_width)]
+        adj = [(1,0),(-1,0),(0,1),(0,-1),(1,1),(1,-1),(-1,1),(-1,-1)]
+        for i in range(self.scaled_width):
+            for j in range(self.scaled_width):
+                if matrix[i][j] == 1:
+                    for x,y in adj:
+                        if 0 <= i-x < self.scaled_width and 0 <= j-y < self.scaled_width:
+                            if matrix[i-x][j-y] == 0:
+                                perimeter_matrix[i][j] = 1
+                    
+        return perimeter_matrix 
 
 
 
