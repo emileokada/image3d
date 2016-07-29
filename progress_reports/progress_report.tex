@@ -54,8 +54,8 @@ I then took its orthogonal projection and binarized the image to obtain shadows 
 
 \begin{figure}[H]
     \begin{floatrow}
-        \ffigbox{\includegraphics[scale = 0.5]{figures/space1.jpg}}{\caption{Shadow of rabit with $\theta=0$}\label{fig:err1}}
-        \ffigbox{\includegraphics[scale = 0.5]{figures/space5.jpg}}{\caption{Shadow of rabit with $\theta=\pi/2$}\label{fig:err2}}
+        \ffigbox{\includegraphics[scale = 0.5]{figures/space1.jpg}}{\caption{Shadow of rabit with $\theta=0$.}\label{fig:err1}}
+        \ffigbox{\includegraphics[scale = 0.5]{figures/space5.jpg}}{\caption{Shadow of rabit with $\theta=\pi/2$.}\label{fig:err2}}
     \end{floatrow}
 \end{figure}
 
@@ -95,6 +95,62 @@ A camera is then placed behind the paper to capture the shadows.
 
 \subsubsection{Remaining tasks}
 I'll create a proper design this week and make a basic prototype on a smaller scale hopefully by next week.
+
+\section{Week 2}
+\subsection{Reading}
+This week I had a chat with Martin and Matthias on how to resolve objects like rabit ears (i.e. disjoint unions of convex objects).
+They suggested a 'back projection' method that is a generalization (or in some sense a generalization of the 'dual') of the method from week 1.
+The methods can be thought of as follows: imagine standing inside a circle with walls around. 
+Every, say, $\pi/8$ radians there is a light source that creates a shadow diagonally opposite.
+Now extend each shadow out of the wall to the opposite side, to create 'cylinders' with cross sections with the shape of the shadow.
+We then intersect these cylinders to get the reconstruction.
+In some sense this method utilizes all the information available and can distinguish between legs, rabit ears and other disjoint unions of convex blobs. 
+We also don't need to differentiate anything with this method which is always nice.
+
+\subsubsection{Remaining tasks}
+Read up on TV smoothing for 3D surfaces to make smoother reconstructions.
+
+\subsection{Coding}
+Before I implemented the new method I added a polygonal mesh to the original method.
+
+\begin{figure}[H]
+  \centering
+    \includegraphics[width=0.7\textwidth]{figures/polygonal_mesh.png}
+    \caption{Original reconstruction with polygonal mesh added.}
+  \label{fig:f2}
+\end{figure}
+
+I also implemented the new method.
+It works by reducing it to the 2D version of the problem and doing the reconstruction by slices like the previous method.
+It is slightly more computationally expensive (the 'cyclinders' are represented in arrays and the intersection is done by pointwise multiplication).
+However, there results are a lot better.
+
+\begin{figure}[H]
+  \centering
+    \includegraphics[width=0.7\textwidth]{figures/rabit_ears_3.png}
+    \caption{Reconstruciton of rabit with two disjoint ears.}
+  \label{fig:f2}
+\end{figure}
+
+I also implemented a method that only displays the boundary of the reconstructions by taking the morphological perimeter of each slice.
+
+\begin{figure}[H]
+  \centering
+    \includegraphics[width=0.7\textwidth]{figures/rabit_ears_4.png}
+    \caption{Boundary of rabit reconstruciton.}
+  \label{fig:f2}
+\end{figure}
+
+\subsubsection{Remaining tasks}
+It would be good to add a mesh to this method as well and maybe get some lighting to make it look more realistic.
+Also need to implement TV method, but will probably wait to do that until I have something that works first.
+
+\subsection{Building}
+I've done some reseach on turntables for humans. I've found quite a few DIY turntables that are cheap and relatively straightforward to make (see \href{http://hackaday.com/2015/05/23/3d-scanning-rig-and-diy-turntable/}{this}, \href{http://www.thingiverse.com/thing:729923}{this} and \href{http://hackaday.com/2016/02/25/hacked-turntable-rotates-humans-for-3d-scanning/}{this}).
+I also looked for some ready made ones, but the ones I found were either too expensive (€650) or made for mannequins so can't take the full load of a human.
+It seems like the best option would be to make my own. I'll contact the engineering department to ask if there is any way I could use some of their tools (possibly under the supervision of an engineering friend) to make the turntable myself.
+I've also looked at lighting and it seems quite cheap so shouldn't be a problem.
+Hopefully I'll start ordering the equipment this week.
 
 \newpage
 \section{Code}

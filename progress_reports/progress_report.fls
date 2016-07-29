@@ -358,6 +358,15 @@ INPUT ./figures/rabit.png
 INPUT figures/ear_and_back_cutoff.png
 INPUT ./figures/ear_and_back_cutoff.png
 INPUT ./figures/ear_and_back_cutoff.png
+INPUT figures/polygonal_mesh.png
+INPUT ./figures/polygonal_mesh.png
+INPUT ./figures/polygonal_mesh.png
+INPUT figures/rabit_ears_3.png
+INPUT ./figures/rabit_ears_3.png
+INPUT ./figures/rabit_ears_3.png
+INPUT figures/rabit_ears_4.png
+INPUT ./figures/rabit_ears_4.png
+INPUT ./figures/rabit_ears_4.png
 INPUT ../shadow_function.py
 INPUT /usr/local/texlive/2014/texmf-dist/tex/latex/listings/lstlang1.sty
 INPUT /usr/local/texlive/2014/texmf-dist/tex/latex/listings/lstlang1.sty

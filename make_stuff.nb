@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[      9690,        251]
-NotebookOptionsPosition[      9101,        225]
-NotebookOutlinePosition[      9457,        241]
-CellTagsIndexPosition[      9414,        238]
+NotebookDataLength[      9986,        255]
+NotebookOptionsPosition[      9397,        229]
+NotebookOutlinePosition[      9753,        245]
+CellTagsIndexPosition[      9710,        242]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -38,7 +38,7 @@ Cell[BoxData[
    RowBox[{
     RowBox[{"Export", "[", 
      RowBox[{
-      RowBox[{"\"\</Users/emileokada/Documents/Summer/pictures/space\>\"", "<>", 
+      RowBox[{"\"\</Users/emileokada/Documents/Summer/pictures/rabit\>\"", "<>", 
        RowBox[{"ToString", "[", 
         RowBox[{"#2", "[", 
          RowBox[{"[", "1", "]"}], "]"}], "]"}], "<>", "\"\<.jpg\>\""}], ",", 
@@ -100,20 +100,23 @@ Cell[BoxData[
    3.677563773148718*^9}, {3.677564555824774*^9, 3.677564557065052*^9}, {
    3.677564625341366*^9, 3.677564625717695*^9}, 3.6775646979858303`*^9, {
    3.6775651418598347`*^9, 3.677565147278051*^9}, 3.6778223941703253`*^9, {
-   3.677912073206704*^9, 3.67791207404568*^9}}],
+   3.677912073206704*^9, 3.67791207404568*^9}, {3.678078094098699*^9, 
+   3.678078094972062*^9}, {3.678079462382579*^9, 3.678079470107629*^9}, {
+   3.678079584649736*^9, 3.678079584720614*^9}, {3.678168865058837*^9, 
+   3.6781688651960497`*^9}}],
 
 Cell[BoxData[
  RowBox[{"{", 
-  RowBox[{"\<\"/Users/emileokada/Documents/Summer/Pictures/space1.jpg\"\>", 
-   ",", "\<\"/Users/emileokada/Documents/Summer/Pictures/space2.jpg\"\>", 
-   ",", "\<\"/Users/emileokada/Documents/Summer/Pictures/space3.jpg\"\>", 
-   ",", "\<\"/Users/emileokada/Documents/Summer/Pictures/space4.jpg\"\>", 
-   ",", "\<\"/Users/emileokada/Documents/Summer/Pictures/space5.jpg\"\>", 
-   ",", "\<\"/Users/emileokada/Documents/Summer/Pictures/space6.jpg\"\>", 
-   ",", "\<\"/Users/emileokada/Documents/Summer/Pictures/space7.jpg\"\>", 
-   ",", "\<\"/Users/emileokada/Documents/Summer/Pictures/space8.jpg\"\>", 
-   ",", "\<\"/Users/emileokada/Documents/Summer/Pictures/space9.jpg\"\>", 
-   ",", "\<\"/Users/emileokada/Documents/Summer/Pictures/space10.jpg\"\>"}], 
+  RowBox[{"\<\"/Users/emileokada/Documents/Summer/pictures/rabit1.jpg\"\>", 
+   ",", "\<\"/Users/emileokada/Documents/Summer/pictures/rabit2.jpg\"\>", 
+   ",", "\<\"/Users/emileokada/Documents/Summer/pictures/rabit3.jpg\"\>", 
+   ",", "\<\"/Users/emileokada/Documents/Summer/pictures/rabit4.jpg\"\>", 
+   ",", "\<\"/Users/emileokada/Documents/Summer/pictures/rabit5.jpg\"\>", 
+   ",", "\<\"/Users/emileokada/Documents/Summer/pictures/rabit6.jpg\"\>", 
+   ",", "\<\"/Users/emileokada/Documents/Summer/pictures/rabit7.jpg\"\>", 
+   ",", "\<\"/Users/emileokada/Documents/Summer/pictures/rabit8.jpg\"\>", 
+   ",", "\<\"/Users/emileokada/Documents/Summer/pictures/rabit9.jpg\"\>", 
+   ",", "\<\"/Users/emileokada/Documents/Summer/pictures/rabit10.jpg\"\>"}], 
   "}"}]], "Output",
  CellChangeTimes->{{3.677320079893648*^9, 3.6773200962844276`*^9}, 
    3.677320127182867*^9, {3.677320157507085*^9, 3.6773201890091467`*^9}, 
@@ -121,7 +124,8 @@ Cell[BoxData[
    3.6773901187863617`*^9, 3.67747565383314*^9, 3.6775611466776114`*^9, 
    3.67756126181498*^9, {3.677563774384892*^9, 3.677563791823907*^9}, 
    3.677564559193193*^9, 3.677564627618753*^9, 3.677564699881001*^9, 
-   3.6775647537651577`*^9, 3.677565152154923*^9}]
+   3.6775647537651577`*^9, 3.677565152154923*^9, 3.6780781112289963`*^9, 
+   3.6780794751417437`*^9, 3.6780795896339073`*^9, 3.678168871341218*^9}]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -242,16 +246,16 @@ CellTagsIndex->{}
 Notebook[{
 Cell[558, 20, 464, 10, 28, "Input"],
 Cell[CellGroupData[{
-Cell[1047, 34, 2829, 68, 97, "Input"],
-Cell[3879, 104, 1279, 19, 97, "Output"]
+Cell[1047, 34, 3027, 71, 97, "Input"],
+Cell[4077, 107, 1377, 20, 97, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[5195, 128, 1580, 41, 80, "Input"],
-Cell[6778, 171, 2049, 41, 730, "Output"]
+Cell[5491, 132, 1580, 41, 80, "Input"],
+Cell[7074, 175, 2049, 41, 730, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[8864, 217, 124, 2, 28, "Input"],
-Cell[8991, 221, 94, 1, 28, "Output"]
+Cell[9160, 221, 124, 2, 28, "Input"],
+Cell[9287, 225, 94, 1, 28, "Output"]
 }, Open  ]]
 }
 ]

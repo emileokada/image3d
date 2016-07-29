@@ -27,7 +27,6 @@ class image3d:
         self.xy = self.scaled_mid*0.75
         self.aspect = 1
 
-        self.shadow_list = [[] for i in range(self.height)]
         self.shadow_bands = [[] for i in range(self.height)]
         self.x, self.y, self.z = [], [], []
 
@@ -57,9 +56,6 @@ class image3d:
         fig = plt.figure()
         ax = fig.add_subplot(111,projection='3d')
         ax.scatter(self.flat_x,self.flat_y,self.flat_z,marker='.')
-        #collection = Poly3DCollection(self.polygon_vertices, linewidths=1, alpha=0.5)
-        #collection.set_facecolor([0.5,0.5,1])
-        #ax.add_collection3d(collection)
         plt.xlim([-self.xy,self.xy])
         plt.ylim([-self.xy,self.xy])
         plt.show()
@@ -115,7 +111,7 @@ class image3d:
         return np.array([[1 if self.in_band(theta,i,j,bands) else 0 for i in range(self.scaled_width)] for j in range(self.scaled_width)])
 
     def intersected_area(self,z_coord):
-        print z_coord
+        print str(100*z_coord/self.height) + "%"
         intersection = np.array([[1 for i in range(self.scaled_width)] for j in range(self.scaled_width)])
         for i, bands in enumerate(self.shadow_bands[z_coord]):
             intersection = intersection * self.banded_matrix(math.pi*i/self.resolution,bands)
@@ -137,9 +133,6 @@ class image3d:
                                 perimeter_matrix[i][j] = 1
                     
         return perimeter_matrix 
-
-
-
 
 files = ['./pictures/'+f for f in os.listdir('./pictures/')]
 files = sorted(files, key=lambda x: int(re.search(r'(\d+)\.jpg',x).group(1)))
