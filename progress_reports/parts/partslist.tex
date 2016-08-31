@@ -1,0 +1,106 @@
+\documentclass[11pt,twoside,a4paper]{article}
+
+% Page layout
+\usepackage{a4}            
+\usepackage{fancyhdr}
+\renewcommand{\oddsidemargin}{-10pt}
+\renewcommand{\evensidemargin}{-10pt}
+\renewcommand{\topmargin}{-30pt}
+\renewcommand{\textwidth}{460pt}
+\renewcommand{\marginparwidth}{100pt}
+\setlength{\parindent}{0em}
+\addtolength{\parskip}{1ex}
+
+% Packages
+\usepackage{lastpage}       
+\usepackage{verbatim}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{thmtools}
+\usepackage{enumitem}
+\usepackage{graphicx}
+\usepackage{mathrsfs}
+\usepackage{caption}
+\usepackage{subfig}
+\usepackage[pdftex]{hyperref}
+
+%Mathmode shortcuts
+\providecommand{\RR}{\mathbb{R}}
+\providecommand{\NN}{\mathbb{N}}
+\providecommand{\ZZ}{\mathbb{Z}}
+\providecommand{\QQ}{\mathbb{Q}}
+\providecommand{\seq}{\subseteq}
+\renewcommand{\th}{\textsuperscript{th}\ }
+\renewcommand{\P}{\mathcal{P}}
+\providecommand{\e}{\varepsilon}
+\newcommand{\pto}{\longrightarrow\hspace{-.38 cm}\shortmid \hspace{.38 cm}}
+\let\oldemptyset\emptyset
+\let\emptyset\varnothing
+\newcommand{\twopartdef}[4] { \left\{ \begin{array}{ll} #1 &  #2 \\ #3 &  #4 \end{array} \right.}
+\newcommand{\threepartdef}[6] { \left\{ \begin{array}{ll} #1 & #2 \\ #3 & #4 \\ #5 & #6 \end{array} \right.}
+\newcommand{\D}{\mathcal{D}}
+\newcommand*\Let[2]{\State #1 $\gets$ #2}
+\providecommand{\nsub}{\vartriangleleft}
+\providecommand{\nsubright}{\vartriangleright}
+\DeclareMathOperator{\im}{im}
+\DeclareMathOperator{\sgn}{sgn}
+\DeclareMathOperator{\orb}{orb}
+\DeclareMathOperator{\stab}{stab}
+\DeclareMathOperator{\ccl}{ccl}
+\DeclareMathOperator{\aut}{Aut}
+\DeclareMathOperator{\epi}{epi}
+\DeclareMathOperator{\cl}{cl}
+\DeclareMathOperator{\ri}{ri}
+\DeclareMathOperator{\dom}{dom}
+\DeclareMathOperator{\prox}{prox}
+\DeclareMathOperator*{\argmin}{arg\,min}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+
+\newcommand{\twomatrix}[4]{\begin{pmatrix} #1 & #2 \\ #3 & #4 \end{pmatrix}}
+\newcommand{\twovector}[2]{\begin{pmatrix} #1 \\ #2 \end{pmatrix}}
+\newcommand{\threematrix}[9]{\begin{pmatrix} #1 & #2 & #3 \\ #4 & #5 & #6 \\ #7 & #8 & #9 \end{pmatrix}}
+\newcommand{\threevector}[3]{\begin{pmatrix} #1 \\ #2 \\ #3 \end{pmatrix}}
+
+\newcommand{\contradiction}{%
+\begin{tikzpicture}[rotate=45,x=0.5ex,y=0.5ex]
+  \draw[line width=.1ex] (0,2) -- (3,2) (0,1) -- (3,1) (1,3) -- (1,0) (2,3) -- (2,0);
+\end{tikzpicture}
+}
+
+%Theorems
+\theoremstyle{definition}
+\newtheorem*{cor}{Corollary}
+\newtheorem*{defn}{Definition}
+\newtheorem*{eg}{Example}
+\newtheorem*{lem}{Lemma}
+\newtheorem*{notation}{Notation}
+\newtheorem*{prop}{Proposition}
+\newtheorem*{thm}{Theorem}
+\newtheorem*{rem}{Remark}
+
+\begin{document}
+
+{
+  \centering{\Large\bf Parts List}
+
+\centering{\today}
+
+}
+
+\vspace{10mm} 
+
+\begin{tabular}{|c|c|c|c|c|}
+  \hline
+  Part name & quantity & cost per piece & link \\
+  \hline
+  1.5`` 3m PVC pipe (SDR26-ASTM) & 10 & \pounds 12.49 & \href{http://www.ixi-devices.com/shop/1-12-inch-white-pvc-sdr-26-astm-pipe/}{ixi devices}\\
+  1.5`` PVC 3-way corner fitting & 6 & \pounds 3.99 & \href{http://www.ixi-devices.com/shop/pvc-connector-corner-piece-1-12-inch/}{ixi devices}\\
+  1.5`` PVC 4-way centre fitting & 5 & \pounds 3.99 & \href{http://www.ixi-devices.com/shop/pvc-connector-4-way-centre-1-12-inch/}{ixi devices}\\
+  1.5`` PVC 3-way tee fitting & 3 & \pounds 3.75 & \href{http://www.ixi-devices.com/shop/pvc-connector-3-way-tee-1-12-inch/}{ixi devices}\\
+  \hline
+\end{tabular}
+
+\vspace{5mm} 
+
+\end{document}

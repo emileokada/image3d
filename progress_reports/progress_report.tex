@@ -152,13 +152,239 @@ It seems like the best option would be to make my own. I'll contact the engineer
 I've also looked at lighting and it seems quite cheap so shouldn't be a problem.
 Hopefully I'll start ordering the equipment this week.
 
+\section{Week 3}
+\subsection{Reading}
+This week I read up on ROF denoising and the TV transform. In particular I read the Chambolle \& Pock paper.
+I then extended the ROF denoising algorithm to 3D 'images' in the obvious way.
+
+\subsection{Coding}
+In preparation for the 3D version of the TV denoising algorithm I implemented the 2D version as outlined in the paper.
+
+\begin{figure}[H]
+  \centering
+    \includegraphics[width=0.4\textwidth]{figures/denoised.png}
+    \caption{Look, less noise! (with very few iterations since python is slow...)}
+  \label{fig:f2}
+\end{figure}
+
+I then implemented the 3D version. Here is a sample output:
+
+\begin{figure}[H]
+  \centering
+    \includegraphics[width=0.7\textwidth]{figures/smooth_rabit.png}
+    \caption{Denoised rabit. It doesn't look very different however since the input data didn't have much noise to start with. This is good!}
+  \label{fig:f2}
+\end{figure}
+
+
+\subsubsection{Remaining tasks}
+I should probably make the rabit look solid rather than a cloud of dots. I should also test the algorithm on some noisy data as well.
+Maybe I can add in some facny lighting and fun statistics about water content and whatnot (for the purpose of the science fair).
+I think I'll also reimplement the code in Matlab since python is super slow.
+
+\subsection{Building}
+I set up a meeting with the dyson center in the engineering department this week. We might be able to use their spaces to construct the scanner.
+We discussed how to make the turntable in particular. One of the designs we looked at however seemed somewhat difficult to make and would probably require us to hire the workshop to make it. 
+I'll thus look more into the simpler looking turntable. 
+
+\subsubsection{Remaining tasks}
+I need to make some accurate drawings for the turntable.
+I'll need exact measurements etc. and also I need to find the parts I need. Then I can make a cost estimate and then meet with the people in the engineering department again to discuss feasiblity.
+
+\section{Week 4}
+
+My parents came to visit over the weekend + Monday and left on Tuesday so didn't get as much done as I'd like. I also spent Thursday + Friday preparing the presentation for the group meeting.
+
+\subsection{Building}
+On Tuesday I visited the Dyson Center to ask about the designs and using their space.
+One of the designs for the turntable that I had found was probably a bit beyond my technical skills so I decided to go for the simpler design.
+While there they kindly explained the key parts of the design and what a bearing was.
+They also said they had to double check that it was ok that we used space in the Dyson Center since we were from the maths department. Hopefully they will get back to us soon.
+
+I've also looked more closely at what I need to do buildingwise and started looking up parts. A rough upper bound on the cost of the turn table is \pounds 100. This includes the cost of plywood, wood glue, bearings, motor, and the computer components (bluetooth component and arduino nano to control the motor remotely). 
+Note that this is an upper bound and can probably be brought down maybe \pounds 30-\pounds 40.
+
+The shadow screen will probably be quite a bit cheaper. A 2m PVC pipe costs roughly \pounds 3. Trow in the cost of some joints and the fabric (this is the most expensive part, maybe \pounds 25, but I'll look for some cheaper alternatives) and the total can be roughly bounded above by \pounds 50.
+
+The last remaining part is the light. I noticed that the light from a projector is very strong and might be able to do the trick. If not, I found some outdoor lights that cost \pounds 8, so I just need something to mount them on.
+
+\subsection{Remaining tasks}
+This week I need to start ordering the parts. Then hopefully I can start building something next week.
+
+\section{Week 5}
+This week I was helping out with a maths summer school in the mornings (9am-11am) since I'm mostly just waiting for parts to arrive.
+
+\subsection{Reading}
+This week Martin explained to me an alternate way to perform the smoothing on the 3D reconstruction.
+
+The idea is to solve
+\begin{equation}
+    \hat u = \argmin_u \{\text{TV}(u) \text{ s.t. } SR(u)=0, u\in[0,1]\}
+\end{equation}
+where $R$ is the discrete Radon transform and S is a subsampling operator which depends on the input image (it ensures that the Radon tranform of $u$ stays 0 at the same places as for the inital images).
+
+To solve this problem we can use the Chambolle Pock framework by letting 
+\begin{align*}
+    F(y_1,y_2) &= \chi_{\cdot = 0}(y_1)+\|\|y_2\|_2\|_1 \\
+    G(x) &= \chi_{[0,1]}(x) \\
+    K &= (SR,\nabla)^T
+\end{align*}
+
+\subsubsection{Remaining tasks}
+I'll need to actually implement this. Doesn't seem like too much work, but will wait till I've actually made the 3D-scanning device first.
+
+Anothering that I need to do is find a robust way to generate a polygonal mesh of the reconstructed object. I can't seem to find an easy way to do this.
+
+\subsection{Building}
+Over the past week I begun ordering all the parts we need.
+The main difficulty has been in obtaining furniture grade PVC fittings in the UK.
+The DYI market is large in the US, but quite small in the UK. 
+The only seemingly decent supplier in the UK however is currently not in operation due to a wedding of some sorts (?) (it is a very small company).
+I we've thus resorted to ordering the fittings from Germany, and the pipes from the UK.
+
+Otherwise, we now have the fabric, wood glue, Lazy Susan bearings, extension cords, webcam, motor and printer.
+
+It remains to order some of the electronic circuit components, plywood and possibly a usb extension cable.
+
+I also went to the Dyson center to get some advice. Here are scans of the sketches that Dr. Roebuck made while explaining how to make the electric ciruit and where to get plywood.
+\includepdf[pages={1,2}]{figures/drawings.pdf}
+
+\section{Week 6}
+
+\subsection{Reading}
+This week I've read up a bit on electronic circuits.
+After talking to Dr. Roebuck, I got some advice on what sort of components I'd need to control the motor using a computer.
+As such I've read up on MOSFETs, parallel ports and microswitches.
+The parallel port allows me to connect the circuit to the computer, while the MOSFET acts as a switch to turn the motor on an off.
+Lastly, the microswitch can help keep track of how many degrees the turntable has tunred by counting the numer of teeth that have passed by.
+
+\subsubsection{Remaining tasks}
+I'll need to find a way to undo the warping caused by the wide angle webcam.
+
+\subsection{Coding}
+After talking to Matthias, it turns out matlab has an 'isosurface' function which allows me to create a surface around the reconstructed object and add lighting and shadows. As such I've been migrating my python code to matlab.
+The other reason I'm doing this is because matlab seems to be quite a bit quicker with dealing with large array's of the type I'm working with.
+I've migrated rougly half of the code now and intend to finish by the end of this week.
+
+\subsection{Building}
+The PVC pipes have now arrived and we're only waiting for the fittings from Germany now.
+It seems like the muslin cloth for my backdrop is taking longer than anticipated to arrive so I might have to send an email to enquire.
+The plywood has also been ordered so I should be able to start cutting it by midweek.
+The motor is also here now, so I only need to order the remaining electronic components.
+All that remains is dealing with the lighting. 
+I've emailed a friend who is an engineer at a lighting company in Cambridge to ask for his advice. 
+He had previously mentioned that we might be able to inherit some spare lighting or at the very least get some tips on what kind of strength we need to get a decent shadow in a standardly illuminated room.
+
+\subsubsection{Changes}
+I've made some modifications to the design of the shadow screen.
+With the new wide angled webcam, I can place the webcam roughly 1m away from the screen. As such I intend to adjoin an additional structure to the screen to ensure that the webcam stays at a fixed position relative to the screen.
+This way I can also hopefully correct for the distortions caused by the wide angle lens since I know precisely the distance between the webcam and the shadow screen.
+
+\begin{figure}[H]
+  \centering
+    \includegraphics[width=0.4\textwidth]{figures/new_setup.jpg}
+    \caption{Mounting of the webcam.}
+  \label{fig:f2}
+\end{figure}
+
+\subsubsection{Remaining tasks}
+Other than obviously assembling the setup, I need to determine a proper power supply. 
+The engineering department has kindly allowed me to borrow one of their variable power supplies so that I can determine what kind of current I need.
+Thus once the turntable is functional and tested I can buy a fixed current power supply.
+
+\section{Week 7}
+
+\subsection{Coding}
+This week I finished rewriting all the code in Matlab.
+I also added some new functionality.
+The program now creates a surface mesh and adds lighting to the reconstruction.
+
+\begin{figure}[H]
+  \centering
+    \includegraphics[width=0.7\textwidth]{figures/rabit_surface.jpg}
+    \caption{Reconstructed rabit with surface mesh and lighting.}
+  \label{fig:f2}
+\end{figure}
+
+A higher resolution can be obtainted by lowering the 'xy\_scaling' parameter in the 'recon' class, but the tradeoff is that it becomes quite a bit slower.
+
+\subsubsection{Remaining tasks}
+Create an interface which people at the science fair can use.
+In other words, a start button to rotate the person and then an interface which allows them to view the object from different angles.
+
+\subsection{Building}
+The frame of the shadow screen was completed this week.
+The pvc pipes were cut into two 2m pieces, two 1.5m pieces, one 1m piece, one 0.75m piece and four 0.5m pieces.
+Assembly takes roughly 1min so is very convenient. The finished frame looks like
+
+\begin{figure}[H]
+  \centering
+    \includegraphics[width=0.7\textwidth]{figures/skeleton.jpg}
+    \caption{Frame of shadow screen.}
+  \label{fig:f2}
+\end{figure}
+
+The fabric also arrived and came in one 2m by 1.5m peice.
+To attach the fabric to the frame I decided to sew on elastic cloth as 'handles'. 
+
+One early problem that I found was that the fabric was letting too much light in.
+While the shadow was nice and clear on the side that was illuminated, from the back it got washed out by the weaker ambient lighting.
+
+\begin{figure}[H]
+  \centering
+    \includegraphics[width=0.7\textwidth]{figures/clear_shadow.jpg}
+    \caption{The shadow from the front view is nice and clear...}
+  \label{fig:f2}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+    \includegraphics[width=0.7\textwidth]{figures/rear_shadow.jpg}
+    \caption{... however the current fabric is too transparent so the camera picks up the ambient background lighting as well as the actual object.}
+  \label{fig:f2}
+\end{figure}
+
+To try to fix the problem I tried folding the fabric to see if increasing the thickness helped improve clarity.
+
+\begin{figure}[H]
+  \centering
+    \includegraphics[width=0.5\textwidth]{figures/one_fold.jpg}
+    \caption{No folds lets in too much light...}
+  \label{fig:f2}
+\end{figure}
+\begin{figure}[H]
+  \centering
+    \includegraphics[width=0.5\textwidth]{figures/two_folds.jpg}
+    \caption{... two layers seems to block a lot of the ambient background lighting}
+  \label{fig:f2}
+\end{figure}
+\begin{figure}[H]
+  \centering
+    \includegraphics[width=0.5\textwidth]{figures/three_folds.jpg}
+    \caption{... three layers blocks out too much of the intended lighting as well.}
+  \label{fig:f2}
+\end{figure}
+
+Two folds seems to give the optimal clarity so I've purchased another 2mx1.5m peice of fabric.
+Another problem that has turned up is that it is difficult to get the shadow of the feet to show up on the shadow screen. 
+It seems like to fix this we'd need another light source at a lower height, but then we'd get two shadows which isn't really a very good idea.
+I think at this point it seems like a wiser idea to restrict the reconstruction from the waist up (ideally we'd have a large raised platform and a parabolic light reflector, but time, skill and monetary constraints render this infeasible).
+
+In other news, there's been progress on the turntable. 
+The cogs have been cut out. 
+It only remains to 3D print the smaller cog, to lubricate the bearings, get the motor working and then put together the circuit.
+
+\begin{figure}[H]
+  \centering
+    \includegraphics[width=0.7\textwidth]{figures/cog.jpg}
+    \caption{The turntable cog.}
+  \label{fig:f2}
+\end{figure}
+
 \newpage
 \section{Code}
 \subsection{3D reconstruction from shadows}
 \label{alg:shadow}
-\lstinputlisting[language=Python]{../shadow_function.py}
-\subsection{Miscellaneous functions}
-\label{alg:misc}
-\lstinputlisting[language=Python]{../misc.py}
+\lstinputlisting[language=Python]{../recon/recon.m}
 \end{document}
 

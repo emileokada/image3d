@@ -1,0 +1,8 @@
+\beamer@endinputifotherversion {3.33pt}
+\beamer@sectionintoc {1}{Motivation}{3}{0}{1}
+\beamer@sectionintoc {2}{2D Reconstructions}{4}{0}{2}
+\beamer@subsectionintoc {2}{1}{What kind of sets can we reconstruct?}{4}{0}{2}
+\beamer@subsectionintoc {2}{2}{How to perform the reconstruction}{6}{0}{2}
+\beamer@sectionintoc {3}{3D Reconstructions}{9}{0}{3}
+\beamer@subsectionintoc {3}{1}{'Slice-wise' convex volumes}{9}{0}{3}
+\beamer@sectionintoc {4}{TV Denoising}{15}{0}{4}

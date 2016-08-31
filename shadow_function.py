@@ -5,11 +5,14 @@ import numpy as np
 import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
 from mpl_toolkits.mplot3d.art3d import Poly3DCollection
+import matplotlib.cm as cm
+from meshpy.tet import MeshInfo, build
 
 import math
 import re
 import os
 from misc import *
+from denoise3d import denoise3d
 
 class image3d:
     def __init__(self,files):
@@ -18,8 +21,8 @@ class image3d:
 
         self.resolution = len(files)
 
-        self.vertical_pixel_spacing = self.height//50
-        self.xy_scaling = 5
+        self.vertical_pixel_spacing = self.height//30
+        self.xy_scaling = 10
 
         self.scaled_width = self.width//self.xy_scaling
         self.scaled_mid = self.scaled_width//2
@@ -29,6 +32,7 @@ class image3d:
 
         self.shadow_bands = [[] for i in range(self.height)]
         self.x, self.y, self.z = [], [], []
+        self.mat = []
 
         #Determine the shadow function
         for f in files:
@@ -42,16 +46,22 @@ class image3d:
         for i in range(self.height):
                 if i % self.vertical_pixel_spacing == 0:
                     #Add points
-                    #coords = self.get_coords(self.intersected_area(i),i)
-                    coords = self.get_coords(self.morphological_perimeter(self.intersected_area(i)),i)
+                    temp_mat = self.intersected_area(i)
+                    #temp_mat = self.morphological_perimeter(self.intersected_area(i))
+                    self.mat.append(temp_mat)
+                    coords = self.get_coords(temp_mat,i)
+                    #coords = self.get_coords(self.morphological_perimeter(self.intersected_area(i)),i)
                     self.x.append(coords[0])
                     self.y.append(coords[1])
                     self.z.append(coords[2])
+
+        self.mat = np.array(self.mat)
 
         self.sparse_x = self.x
         self.sparse_y = self.y
         self.sparse_z = self.z
 
+        """
         #Create figure
         fig = plt.figure()
         ax = fig.add_subplot(111,projection='3d')
@@ -59,6 +69,7 @@ class image3d:
         plt.xlim([-self.xy,self.xy])
         plt.ylim([-self.xy,self.xy])
         plt.show()
+        """
         
     @property
     def flat_x(self):
@@ -134,7 +145,54 @@ class image3d:
                     
         return perimeter_matrix 
 
+    def get_coordinates_and_density(self,matrix):
+        (d,h,w) = matrix.shape
+        nonzero = [[],[],[],[]]
+        for i in range(d):
+            for j in range(h):
+                for k in range(w):
+                    if matrix[i,j,k] > 0.5:
+                        nonzero[0].append(j-self.scaled_mid)
+                        nonzero[1].append(k-self.scaled_mid)
+                        nonzero[2].append(self.height-i*self.vertical_pixel_spacing)
+                        nonzero[3].append(1)
+        return nonzero
+
+    def matrix_to_plot(self,smooth_matrix):
+        [x,y,z,density] = self.get_coordinates_and_density(smooth_matrix)
+        fig = plt.figure()
+        ax = fig.add_subplot(111,projection='3d')
+        ax.scatter(x,y,z,marker='.',c='r')
+        #ax.scatter(self.flat_x,self.flat_y,self.flat_z,marker='.',c='b')
+        #ax.plot_wireframe(self.flat_x,self.flat_y,self.flat_z)
+        ax.plot_surface(self.flat_x,self.flat_y,self.flat_z)
+        plt.xlim([-self.xy,self.xy])
+        plt.ylim([-self.xy,self.xy])
+        plt.show()
+
+    def write_to_file(self,f):
+        f = open(f,'w')
+        f.write(str(self.flat_x)) 
+        f.write(str(self.flat_y)) 
+        f.write(str(self.flat_z)) 
+        f.close()
+
+    def mesh(self):
+        mesh_info = MeshInfo()
+        mesh_info.set_points(transpose([self.flat_x,self.flat_y,self.flat_z]))
+        mesh = build(mesh_info)
+        print 'yo'
+        for i, t in enumerate(mesh.elements):
+            print i, t
+
+
 files = ['./pictures/'+f for f in os.listdir('./pictures/')]
 files = sorted(files, key=lambda x: int(re.search(r'(\d+)\.jpg',x).group(1)))
 
 space_shuttle = image3d(files)
+space_shuttle.write_to_file('x.txt')
+space_shuttle.mesh()
+
+#space_shuttle.matrix_to_plot(space_shuttle.smoothed_surface.smoothed_matrix)
+space_shuttle.matrix_to_plot(space_shuttle.mat)
+
