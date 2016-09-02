@@ -1,8 +1,13 @@
 load mri
-scanned_data = recon('../pictures/');
-Ds = smooth3(255*scanned_data.volume());
+%scanned_data = recon('../pictures/');
+%Ds = smooth3(255*scanned_data.volume());
 figure
 isosurface(Ds,5)
+rotate3d on
+for x = -200:2:200
+    campos([x,10,30])
+    drawnow
+end
 % hiso = patch(isosurface(Ds,5),...
 %    'FaceColor',[1,.75,.65],...
 %    'EdgeColor','none');
