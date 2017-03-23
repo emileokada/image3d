@@ -47,9 +47,9 @@
 %\usetheme{Szeged}
 %\usetheme{Warsaw}
 
-\title{3D Reconstruction From Shadows}
+\title{How to make a full body 3D scanner}
 
-\author{Emile Okada\inst{1}}
+\author{By: Emile Okada\inst{1}, \\ Supervisors: Carola Schoenlieb\inst{1}, Martin Benning\inst{1}, Matthias Ehrhardt\inst{1}, Veronia Corona\inst{1}}
 % - Give the names in the same order as the appear in the paper.
 % - Use the \inst{?} command only if the authors have different
 %   affiliation.
@@ -63,7 +63,7 @@
 % - Use the \inst command only if there are several affiliations.
 % - Keep it simple, no one is interested in your street address.
 
-\date{Group meeting}
+\date{Summer Undergraduate Research Talks}
 % - Either use conference name or its abbreviation.
 % - Not really informative to the audience, more for people (including
 %   yourself) who are reading the slides online
@@ -100,52 +100,8 @@
   % You might wish to add the option [pausesections]
 \end{frame}
 
-\section{Motivation}
-
-\begin{frame}{Motivation}
-    \begin{figure}[H]
-      \centering
-        \includegraphics[width=0.8\textwidth]{puppets.jpg}
-      \label{fig:f2}
-    \end{figure}
-\end{frame}
-
 % Section and subsections will appear in the presentation overview
 % and table of contents.
-\section{2D Reconstructions}
-
-\subsection{What kind of sets can we reconstruct?}
-
-\begin{frame}{What kind of sets can we reconstruct?}
-    \begin{figure}[H]
-        \begin{floatrow}
-            \ffigbox{\includegraphics[scale = 0.5]{convex.png}}{\label{fig:err1}}
-            \ffigbox{\includegraphics[scale = 0.5]{non_convex.png}}{\label{fig:err2}}
-        \end{floatrow}
-    \end{figure}
-\end{frame}
-
-\subsection{How to perform the reconstruction}
-
-% You can reveal the parts of a slide one at a time
-% with the \pause command:
-\begin{frame}{Cautionary tale}
-    \begin{figure}[H]
-      \centering
-        \includegraphics[width=0.5\textwidth]{const_width.png}
-      \label{fig:f2}
-    \end{figure}
-\end{frame}
-
-\begin{frame}{Example}
-    \begin{figure}[H]
-        \begin{floatrow}
-            \ffigbox{\includegraphics[scale = 0.3]{h.png}\caption{Shadow function}}{\label{fig:err3}}
-            \ffigbox{\includegraphics[scale = 0.3]{d.png}\caption{Reconstructed domain}}{\label{fig:err4}}
-        \end{floatrow}
-    \end{figure}
-\end{frame}
-
 \section{3D Reconstructions}
 
 \subsection{'Slice-wise' convex volumes}
@@ -176,26 +132,89 @@
 \begin{frame}{3D Reconstruction}
     \begin{figure}[H]
       \centering
-        \includegraphics[width=0.8\textwidth]{polygonal_mesh.png}
+        \includegraphics[width=0.8\textwidth]{rabit_surface_1.jpg}
       \label{fig:f2}
     \end{figure}
 \end{frame}
 
-\begin{frame}{But the ears!}
+\section{Building}
+\begin{frame}{Initial design}
     \begin{figure}[H]
-        \begin{floatrow}
-            \ffigbox{\includegraphics[scale = 0.4]{rabit.png}}{\label{fig:err7}}
-            \ffigbox{\includegraphics[scale = 0.4]{ear_and_back_cutoff.png}}{\label{fig:err8}}
-        \end{floatrow}
+      \centering
+        \includegraphics[width=0.8\textwidth]{new_setup.jpg}
+      \label{fig:f2}
     \end{figure}
 \end{frame}
 
-\begin{frame}{3D Reconstruction}
+\begin{frame}{Frame is made}
     \begin{figure}[H]
-        \begin{floatrow}
-            \ffigbox{\includegraphics[scale = 0.4]{rabit_ears_3.png}}{\label{fig:err9}}
-            \ffigbox{\includegraphics[scale = 0.4]{rabit_ears_4.png}}{\label{fig:err10}}
-        \end{floatrow}
+      \centering
+        \includegraphics[width=0.5\textwidth]{skeleton.jpg}
+      \label{fig:f2}
+    \end{figure}
+\end{frame}
+
+\begin{frame}{Sewing mathematician in engineering department}
+    \begin{figure}[H]
+      \centering
+        \includegraphics[width=0.8\textwidth]{sewing.jpg}
+      \label{fig:f2}
+    \end{figure}
+\end{frame}
+
+\begin{frame}{Shadow}
+    \begin{figure}[H]
+      \centering
+        \includegraphics[width=0.8\textwidth]{IMG_5452.jpg}
+      \label{fig:f2}
+    \end{figure}
+\end{frame}
+
+\begin{frame}{3D printing}
+    \begin{figure}[H]
+      \centering
+        \includegraphics[width=0.8\textwidth]{printed_cog.jpg}
+      \label{fig:f2}
+    \end{figure}
+\end{frame}
+
+\begin{frame}{Making the turntable}
+    \begin{figure}[H]
+      \centering
+        \includegraphics[width=0.8\textwidth]{mounted_motor.jpg}
+      \label{fig:f2}
+    \end{figure}
+\end{frame}
+
+\begin{frame}{Making the turntable}
+    \begin{figure}[H]
+      \centering
+        \includegraphics[width=0.8\textwidth]{circuit_1_red.jpg}
+      \label{fig:f2}
+    \end{figure}
+\end{frame}
+
+\begin{frame}{Turntable}
+    \begin{figure}[H]
+      \centering
+        \includegraphics[width=0.8\textwidth]{assembly.jpg}
+      \label{fig:f2}
+    \end{figure}
+\end{frame}
+
+\begin{frame}{Whole set-up}
+    \begin{figure}[H]
+      \centering
+        \includegraphics[width=0.8\textwidth]{IMG_5444.jpg}
+      \label{fig:f2}
+    \end{figure}
+\end{frame}
+
+\begin{frame}{Reconstruction}
+    \begin{figure}[H]
+      \centering
+        \includegraphics[width=0.8\textwidth]{martin_recon.jpg}
+      \label{fig:f2}
     \end{figure}
 \end{frame}
 

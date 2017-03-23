@@ -1,7 +1,4 @@
-\BOOKMARK [2][]{Outline0.1}{Motivation}{}% 1
-\BOOKMARK [2][]{Outline0.2}{2D Reconstructions}{}% 2
-\BOOKMARK [3][]{Outline0.2.1.4}{What kind of sets can we reconstruct?}{Outline0.2}% 3
-\BOOKMARK [3][]{Outline0.2.2.6}{How to perform the reconstruction}{Outline0.2}% 4
-\BOOKMARK [2][]{Outline0.3}{3D Reconstructions}{}% 5
-\BOOKMARK [3][]{Outline0.3.1.9}{'Slice-wise' convex volumes}{Outline0.3}% 6
-\BOOKMARK [2][]{Outline0.4}{TV Denoising}{}% 7
+\BOOKMARK [2][]{Outline0.1}{3D Reconstructions}{}% 1
+\BOOKMARK [3][]{Outline0.1.1.3}{'Slice-wise' convex volumes}{Outline0.1}% 2
+\BOOKMARK [2][]{Outline0.2}{Building}{}% 3
+\BOOKMARK [2][]{Outline0.3}{TV Denoising}{}% 4

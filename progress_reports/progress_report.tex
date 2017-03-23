@@ -381,6 +381,143 @@ It only remains to 3D print the smaller cog, to lubricate the bearings, get the 
   \label{fig:f2}
 \end{figure}
 
+\section{Week 8}
+
+\subsection{Building}
+\subsubsection{3D Printing}
+Finally a lot of the building came together this week.
+The week started with 3D printing the smaller cog and its mount.
+
+\begin{figure}[H]
+  \centering
+    \includegraphics[width=0.7\textwidth]{figures/printed_cog.jpg}
+    \caption{3D printed cog}
+  \label{fig:f2}
+\end{figure}
+
+I got the design of the cog from the website which outlines how to create a turntable.
+This was the first time I'd 3D printed something and it was an interesting experience.
+The file with the cog design had to be converted to an appropriate file format for the 3D printer using an archaic Chinese conversion software!
+Anyway, with that out of the way I proceeded to print the cog in roughly 5h.
+
+Once that was done I tried inserting the motor shaft, but it turned out that the hole was too small so I had to use a file to widen it.
+The problem with this however was that the plastic material used wasn't too strong so when we tested the turntable later on, the hole got damaged and so the shaft just spun in its spot while the cog did not turn.
+The timing for this was particularly inopportune (the day before the final demonstration) so I had to come up with a quick solution.
+Thanks to the advice of Dr. Roebuck, I cut out a thin metal sheet, carefully bent the sheet into a cylinder with a flattened side and inserted it into the cog for reinforcement. 
+This luckily enough, did fix the problem (although I had to spend a lot of extra time filing the hole again).
+
+I then needed to print the mount.
+This was a particularly instructive if not slightly punishing learning experience.
+
+\begin{figure}[H]
+  \centering
+    \includegraphics[width=0.7\textwidth]{figures/mounted_motor.jpg}
+    \caption{Mount, motor and cog}
+  \label{fig:f2}
+\end{figure}
+
+You can see the mount below the motor in the picture above.
+As you can see, it is hollow where the cog is supposed to go.
+Well, on this day I learned that 3D printers cannot print over thin air!
+To print the mount the 3D printer needed to also print a support below the suspended part of the mount. 
+I thought this meant some sparsely spaced pillars, but it turned out it printed a solid block of 3D plastic which I had to manually remove with pliers and a file.
+Consequently the mount took 8h (!) to print.
+A much smarter thing to have done would have been to print the mount on its side.
+This would probably have halved the printing time and saved probably over half the printing material!
+
+\subsubsection{Circuits and souldering}
+While these parts were printing I mostly worked on the circuitry.
+It is worth noting I have never touched a souldering iron in my life before this and so it was quite the learning curve.
+Dr. Roebuck kindly helped with the circuit design and pointed out a fatal mistake I had made in my design (I had connedted the MOSFET the wrong way around).
+He also instructed me in how to soulder.
+As it turns out, souldering is more of an art than anything else.
+My first soulders were abysmal failures that just burnt the wires and didn't actually do anything.
+The biggest challenge was to hold the wire in place while also holding the souldering metal and the souldering iron all the same time.
+Luckily the Dyson center had one of these contraptions to help with extra hands:
+
+\begin{figure}[H]
+  \centering
+    \includegraphics[width=0.7\textwidth]{figures/clamps.jpg}
+    \caption{An extra pair of hands (image from www.goodluckbuy.com).}
+  \label{fig:f2}
+\end{figure}
+
+The other tricky part was attaching the power cables to the circuit.
+Unlike the other wires, these were thicker and so could not be inserted into the holes in the strip board.
+They had to first be saturated with soulder and then melted again to attach to the underside of the board.
+Having never souldered before it took roughly 4-5 frustrating attempts before I even came close to attaching anything.
+Even when it was attached, it turned out there were still gaps between the wire and the copper strip and so another 2-3 attempts ensued.
+You can see my first rather poor attempt highlighted in the red rectangle.
+
+\begin{figure}[H]
+  \centering
+    \includegraphics[width=0.7\textwidth]{figures/circuit_1_red.jpg}
+    \caption{Evidence that I managed to soulder a circuit (poorly)}
+  \label{fig:f2}
+\end{figure}
+
+In theory the soulder should only have been on one of the copper strips. 
+However as you can see I did not have to skill to manage that on my first attempt and I consequently nearly short circuited the whole attempt.
+To fix this I had to use a soulder sucker by melting the soulder between the copper tracks and then sucking up the soulder.
+The green rectangle is how the whole mess should've looked like.
+Note however that the green rectangle was Dr. Roebuck demonstrating how to attach the power cords so I'm afraid I cannot take credit for that one.
+
+I cannot complain though. Learning to soulder and work with circuits was definitely the highlight of this project for me.
+
+\subsubsection{Assembly}
+With most of the parts now made, it remained to piece it all together.
+The motor got screwed onto the mount and the mount got screwed to the base.
+The large cog was attached to the bearing by drilling large holes in the base so that it the cog could be screwed on.
+Then the motor needed to be souldered to the circuit and the circuit needed to be attached to the base.
+To do this part I got 8 bolts and 4 screws, drilled holes into the corners of the circuit board and then placed 2 bolts below each hole, before drilling it to the base.
+This prevented the circuitry from directly touching the base which could potentially cause damage.
+Lastly I needed to soulder the parallel port adapter to the circuit so that the turntable could be connected to a computer.
+This was actually a non trivial task as I needed to make sure that the correct pins were connected at the right points so that everything could be controlled smoothly from the comfort of my computer terminal (mostly though, it was non trivial because I am still bad at souldering).
+
+\begin{figure}[H]
+  \centering
+    \includegraphics[width=0.7\textwidth]{figures/assembly.jpg}
+    \caption{Final assembly}
+  \label{fig:f2}
+\end{figure}
+
+I also purchased the second layer of fabric for the back drop and sewed on elastic cloth bands so that the fabric could be attached to the frame.
+
+\begin{figure}[H]
+  \centering
+    \includegraphics[width=0.7\textwidth]{figures/sewing.jpg}
+    \caption{Sewing on elastic cloth bands.}
+  \label{fig:f2}
+\end{figure}
+
+\subsubsection{Reamining tasks: Electronics and power supply}
+There were a few things that I didn't manage to finish in time for the demonstration.
+First of all I didn't have access to a computer with a parallel port at the engineering department so I had to improvise by using a manual square wave generator to fake the output a computer would generate.
+
+I also didn't have time to finish the part of the circuit with the micro switch.
+The purpose of this was so that we'd know exactly how many teeth had passed when each picture was taken so that we could calculate the angle that the cog had turned.
+Without this part of the circuit I had to hack together rather poor timer based approach that estimated the angle by estimating the time elapsed.
+The problem with this approach is that actually taking the picture takes a non negligible amount of time to do and so the estimate is not great.
+
+\begin{figure}[H]
+  \centering
+    \includegraphics[width=0.7\textwidth]{figures/martin_recon.jpg}
+    \caption{Martin striking a striking pose.}
+  \label{fig:f2}
+\end{figure}
+
+What that meant is that not only did the reconstruction become distorted, but in fact, thin objects like arms might disappear altogether!
+
+I'd quite like to fix this part of the circuit before the science fair in Easter.
+
+Lastly, I need to get a more nimble power supply. 
+The reason why the 15kg behemoth variable current and voltage power supply was used was to figure out how much current was required to drive the motor.
+Now that that has been sorted I can easily get a nice and simple cable.
+
+\subsection{Code}
+The only remainig thing I need to do here is get a hold of a computer with a parallel port and then code up the interface.
+Also, in the end I decided to not use the TV transform for smoothing and instead go with Gaussian smoothing with a small kernel for the sake of speed.
+
 \newpage
 \section{Code}
 \subsection{3D reconstruction from shadows}

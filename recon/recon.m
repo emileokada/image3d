@@ -5,13 +5,13 @@ classdef recon
       height;
       width;
       mid;
-      vertical_spacing = 5;
+      vertical_spacing = 50;
       vertical_resolution;
       shadow_bands;
-      xy_scaling = 5;
+      xy_scaling = 10;
       scaled_width;
       scaled_mid;
-      teeth = 20;
+      teeth = 100;
       increments;
    end
    methods
@@ -19,7 +19,7 @@ classdef recon
            obj.im_dir = im_directory;
            obj.files = get_files(im_directory);
            [obj.height,obj.width] = ...
-               size(rgb2gray(imread([im_directory,obj.files{1,1}])));
+               size(imread([im_directory,obj.files{1,1}]));
            obj.mid = round(obj.width/2);
            
            obj.scaled_width = round(obj.width/obj.xy_scaling);
@@ -31,8 +31,11 @@ classdef recon
            obj.shadow_bands = cell(obj.increments,obj.vertical_resolution);
 
            for i = 1:obj.increments
-               img = double(rgb2gray(...
-                   imread([im_directory,obj.files{i,1}])))/255;
+               %img = double(rgb2gray(...
+               %    imread([im_directory,obj.files{i,1}])))/255;
+               img = double(...
+                   imread([im_directory,obj.files{i,1}]))/255;
+               
                img = round(img);
                for j = 1:obj.vertical_resolution
                    obj.shadow_bands{i,j} = ...

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2015.3.22)  29 AUG 2016 11:12
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2015.3.22)  28 SEP 2016 14:47
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1030,6 +1030,27 @@ LaTeX Warning: Label `fig:f2' multiply defined.
 
 LaTeX Warning: Label `fig:f2' multiply defined.
 
+
+LaTeX Warning: Label `fig:f2' multiply defined.
+
+
+LaTeX Warning: Label `fig:f2' multiply defined.
+
+
+LaTeX Warning: Label `fig:f2' multiply defined.
+
+
+LaTeX Warning: Label `fig:f2' multiply defined.
+
+
+LaTeX Warning: Label `fig:f2' multiply defined.
+
+
+LaTeX Warning: Label `fig:f2' multiply defined.
+
+
+LaTeX Warning: Label `fig:f2' multiply defined.
+
 )
 \openout1 = `progress_report.aux'.
 
@@ -1175,12 +1196,12 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <6> on input line 17.
  [1
 
-{/usr/local/texlive/2014/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] <figures/3D_rabit.png, id=175, 526.96875pt x 526.96875pt>
+{/usr/local/texlive/2014/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] <figures/3D_rabit.png, id=203, 526.96875pt x 526.96875pt>
 File: figures/3D_rabit.png Graphic file (type png)
  <use figures/3D_rabit.png>
 Package pdftex.def Info: figures/3D_rabit.png used on input line 48.
 (pdftex.def)             Requested size: 137.9979pt x 137.99767pt.
- <figures/space1.jpg, id=177, 357.335pt x 221.82875pt>
+ <figures/space1.jpg, id=205, 357.335pt x 221.82875pt>
 File: figures/space1.jpg Graphic file (type jpg)
  <use figures/space1.jpg>
 Package pdftex.def Info: figures/space1.jpg used on input line 57.
@@ -1199,7 +1220,7 @@ Overfull \hbox (11.16705pt too wide) in paragraph at lines 57--57
  [][] 
  []
 
-<figures/space5.jpg, id=178, 357.335pt x 221.82875pt>
+<figures/space5.jpg, id=206, 357.335pt x 221.82875pt>
 File: figures/space5.jpg Graphic file (type jpg)
  <use figures/space5.jpg>
 Package pdftex.def Info: figures/space5.jpg used on input line 58.
@@ -1218,42 +1239,42 @@ Overfull \hbox (11.16705pt too wide) in paragraph at lines 58--58
  [][] 
  []
 
-[2 <./figures/3D_rabit.png>] <figures/rabit.png, id=195, 403.9893pt x 265.2309pt>
+[2 <./figures/3D_rabit.png>] <figures/rabit.png, id=224, 403.9893pt x 265.2309pt>
 File: figures/rabit.png Graphic file (type png)
  <use figures/rabit.png>
 Package pdftex.def Info: figures/rabit.png used on input line 66.
 (pdftex.def)             Requested size: 241.49895pt x 158.54887pt.
- [3 <./figures/space1.jpg> <./figures/space5.jpg> <./figures/rabit.png>] <figures/ear_and_back_cutoff.png, id=206, 409.0482pt x 311.4837pt>
+ [3 <./figures/space1.jpg> <./figures/space5.jpg> <./figures/rabit.png>] <figures/ear_and_back_cutoff.png, id=234, 409.0482pt x 311.4837pt>
 File: figures/ear_and_back_cutoff.png Graphic file (type png)
  <use figures/ear_and_back_cutoff.png>
 Package pdftex.def Info: figures/ear_and_back_cutoff.png used on input line 86.
 (pdftex.def)             Requested size: 241.49895pt x 183.89735pt.
- [4 <./figures/ear_and_back_cutoff.png>] <figures/polygonal_mesh.png, id=213, 776.1798pt x 372.9132pt>
+ [4 <./figures/ear_and_back_cutoff.png>] <figures/polygonal_mesh.png, id=241, 776.1798pt x 372.9132pt>
 File: figures/polygonal_mesh.png Graphic file (type png)
  <use figures/polygonal_mesh.png>
 Package pdftex.def Info: figures/polygonal_mesh.png used on input line 118.
 (pdftex.def)             Requested size: 241.49895pt x 116.02296pt.
- <figures/rabit_ears_3.png, id=214, 354.123pt x 303.534pt>
+ <figures/rabit_ears_3.png, id=242, 354.123pt x 303.534pt>
 File: figures/rabit_ears_3.png Graphic file (type png)
  <use figures/rabit_ears_3.png>
 Package pdftex.def Info: figures/rabit_ears_3.png used on input line 130.
 (pdftex.def)             Requested size: 241.49895pt x 207.00249pt.
- [5 <./figures/polygonal_mesh.png> <./figures/rabit_ears_3.png>] <figures/rabit_ears_4.png, id=223, 375.0813pt x 273.9033pt>
+ [5 <./figures/polygonal_mesh.png> <./figures/rabit_ears_3.png>] <figures/rabit_ears_4.png, id=251, 375.0813pt x 273.9033pt>
 File: figures/rabit_ears_4.png Graphic file (type png)
  <use figures/rabit_ears_4.png>
 Package pdftex.def Info: figures/rabit_ears_4.png used on input line 139.
 (pdftex.def)             Requested size: 241.49895pt x 176.35489pt.
- <figures/denoised.png, id=227, 273.02pt x 278.03876pt>
+ <figures/denoised.png, id=255, 273.02pt x 278.03876pt>
 File: figures/denoised.png Graphic file (type png)
  <use figures/denoised.png>
 Package pdftex.def Info: figures/denoised.png used on input line 165.
 (pdftex.def)             Requested size: 137.9979pt x 140.53362pt.
- [6 <./figures/rabit_ears_4.png>] <figures/smooth_rabit.png, id=234, 387.3672pt x 265.9536pt>
+ [6 <./figures/rabit_ears_4.png>] <figures/smooth_rabit.png, id=262, 387.3672pt x 265.9536pt>
 File: figures/smooth_rabit.png Graphic file (type png)
  <use figures/smooth_rabit.png>
 Package pdftex.def Info: figures/smooth_rabit.png used on input line 174.
 (pdftex.def)             Requested size: 241.49895pt x 165.80666pt.
- [7 <./figures/denoised.png (PNG copy)> <./figures/smooth_rabit.png>] [8] <figures/drawings.pdf, id=247, 597.432pt x 844.83629pt>
+ [7 <./figures/denoised.png (PNG copy)> <./figures/smooth_rabit.png>] [8] <figures/drawings.pdf, id=275, 597.432pt x 844.83629pt>
 File: figures/drawings.pdf Graphic file (type pdf)
  <use figures/drawings.pdf>
 Package pdftex.def Info: figures/drawings.pdf used on input line 250.
@@ -1266,7 +1287,7 @@ File: figures/drawings.pdf Graphic file (type pdf)
  <use figures/drawings.pdf>
 Package pdftex.def Info: figures/drawings.pdf used on input line 250.
 (pdftex.def)             Requested size: 597.43054pt x 844.83423pt.
- [9] <figures/drawings.pdf, id=258, page=1, 597.432pt x 844.83629pt>
+ [9] <figures/drawings.pdf, id=286, page=1, 597.432pt x 844.83629pt>
 File: figures/drawings.pdf Graphic file (type pdf)
  <use figures/drawings.pdf, page 1>
 Package pdftex.def Info: figures/drawings.pdf, page1 used on input line 250.
@@ -1287,7 +1308,7 @@ File: figures/drawings.pdf Graphic file (type pdf)
  <use figures/drawings.pdf, page 1>
 Package pdftex.def Info: figures/drawings.pdf, page1 used on input line 250.
 (pdftex.def)             Requested size: 597.93192pt x 845.54323pt.
- [10 <./figures/drawings.pdf, page is rotated 270 degrees>] <figures/drawings.pdf, id=266, page=2, 597.432pt x 844.83629pt>
+ [10 <./figures/drawings.pdf, page is rotated 270 degrees>] <figures/drawings.pdf, id=294, page=2, 597.432pt x 844.83629pt>
 File: figures/drawings.pdf Graphic file (type pdf)
  <use figures/drawings.pdf, page 2>
 Package pdftex.def Info: figures/drawings.pdf, page2 used on input line 250.
@@ -1300,59 +1321,94 @@ File: figures/drawings.pdf Graphic file (type pdf)
  <use figures/drawings.pdf, page 2>
 Package pdftex.def Info: figures/drawings.pdf, page2 used on input line 250.
 (pdftex.def)             Requested size: 597.93192pt x 845.54323pt.
- [11 <./figures/drawings.pdf, page is rotated 270 degrees>] <figures/new_setup.jpg, id=273, 1084.05pt x 722.7pt>
+ [11 <./figures/drawings.pdf, page is rotated 270 degrees>] <figures/new_setup.jpg, id=301, 1084.05pt x 722.7pt>
 File: figures/new_setup.jpg Graphic file (type jpg)
  <use figures/new_setup.jpg>
 Package pdftex.def Info: figures/new_setup.jpg used on input line 285.
 (pdftex.def)             Requested size: 137.9979pt x 91.9914pt.
- [12] <figures/rabit_surface.jpg, id=278, 694.595pt x 568.1225pt>
+ [12] <figures/rabit_surface.jpg, id=306, 694.595pt x 568.1225pt>
 File: figures/rabit_surface.jpg Graphic file (type jpg)
  <use figures/rabit_surface.jpg>
 Package pdftex.def Info: figures/rabit_surface.jpg used on input line 304.
 (pdftex.def)             Requested size: 241.49895pt x 197.52818pt.
- [13 <./figures/new_setup.jpg> <./figures/rabit_surface.jpg>] <figures/skeleton.jpg, id=286, 941.5175pt x 1062.97125pt>
+ [13 <./figures/new_setup.jpg> <./figures/rabit_surface.jpg>] <figures/skeleton.jpg, id=314, 941.5175pt x 1062.97125pt>
 File: figures/skeleton.jpg Graphic file (type jpg)
  <use figures/skeleton.jpg>
 Package pdftex.def Info: figures/skeleton.jpg used on input line 322.
 (pdftex.def)             Requested size: 241.49895pt x 272.65172pt.
- <figures/clear_shadow.jpg, id=287, 642.4pt x 427.5975pt>
+ <figures/clear_shadow.jpg, id=315, 642.4pt x 427.5975pt>
 File: figures/clear_shadow.jpg Graphic file (type jpg)
 
 <use figures/clear_shadow.jpg>
 Package pdftex.def Info: figures/clear_shadow.jpg used on input line 335.
 (pdftex.def)             Requested size: 241.49895pt x 160.74666pt.
- [14 <./figures/skeleton.jpg>] <figures/rear_shadow.jpg, id=293, 642.4pt x 427.5975pt>
+ [14 <./figures/skeleton.jpg>] <figures/rear_shadow.jpg, id=321, 642.4pt x 427.5975pt>
 File: figures/rear_shadow.jpg Graphic file (type jpg)
  <use figures/rear_shadow.jpg>
 Package pdftex.def Info: figures/rear_shadow.jpg used on input line 342.
 (pdftex.def)             Requested size: 241.49895pt x 160.74666pt.
- <figures/one_fold.jpg, id=294, 642.4pt x 427.5975pt>
+ <figures/one_fold.jpg, id=322, 642.4pt x 427.5975pt>
 File: figures/one_fold.jpg Graphic file (type jpg)
  <use figures/one_fold.jpg>
 Package pdftex.def Info: figures/one_fold.jpg used on input line 351.
 (pdftex.def)             Requested size: 172.5pt x 114.81998pt.
- <figures/two_folds.jpg, id=295, 642.4pt x 427.5975pt>
+ <figures/two_folds.jpg, id=323, 642.4pt x 427.5975pt>
 File: figures/two_folds.jpg Graphic file (type jpg)
  <use figures/two_folds.jpg>
 Package pdftex.def Info: figures/two_folds.jpg used on input line 357.
 (pdftex.def)             Requested size: 172.5pt x 114.81998pt.
- <figures/three_folds.jpg, id=296, 642.4pt x 262.9825pt>
+ <figures/three_folds.jpg, id=324, 642.4pt x 262.9825pt>
 File: figures/three_folds.jpg Graphic file (type jpg)
  <use figures/three_folds.jpg>
 Package pdftex.def Info: figures/three_folds.jpg used on input line 363.
 (pdftex.def)             Requested size: 172.5pt x 70.61697pt.
- [15 <./figures/clear_shadow.jpg> <./figures/rear_shadow.jpg> <./figures/one_fold.jpg>] <figures/cog.jpg, id=304, 1084.05pt x 722.7pt>
+ [15 <./figures/clear_shadow.jpg> <./figures/rear_shadow.jpg> <./figures/one_fold.jpg>] <figures/cog.jpg, id=333, 1084.05pt x 722.7pt>
 File: figures/cog.jpg Graphic file (type jpg)
  <use figures/cog.jpg>
 Package pdftex.def Info: figures/cog.jpg used on input line 379.
 (pdftex.def)             Requested size: 241.49895pt x 160.99046pt.
- [16 <./figures/two_folds.jpg> <./figures/three_folds.jpg> <./figures/cog.jpg>] (/usr/local/texlive/2014/texmf-dist/tex/latex/listings/lstlang1.sty
+ <figures/printed_cog.jpg, id=334, 1084.05pt x 722.7pt>
+File: figures/printed_cog.jpg Graphic file (type jpg)
+ <use figures/printed_cog.jpg>
+Package pdftex.def Info: figures/printed_cog.jpg used on input line 393.
+(pdftex.def)             Requested size: 241.49895pt x 160.99046pt.
+ [16 <./figures/two_folds.jpg> <./figures/three_folds.jpg> <./figures/cog.jpg>] <figures/mounted_motor.jpg, id=342, 1084.05pt x 722.7pt>
+File: figures/mounted_motor.jpg Graphic file (type jpg)
+ <use figures/mounted_motor.jpg>
+Package pdftex.def Info: figures/mounted_motor.jpg used on input line 414.
+(pdftex.def)             Requested size: 241.49895pt x 160.99046pt.
+ [17 <./figures/printed_cog.jpg>] <figures/clamps.jpg, id=348, 602.25pt x 602.25pt>
+File: figures/clamps.jpg Graphic file (type jpg)
+ <use figures/clamps.jpg>
+Package pdftex.def Info: figures/clamps.jpg used on input line 440.
+(pdftex.def)             Requested size: 241.49895pt x 241.50224pt.
+ [18 <./figures/mounted_motor.jpg>] <figures/circuit_1_red.jpg, id=354, 1084.05pt x 722.7pt>
+File: figures/circuit_1_red.jpg Graphic file (type jpg)
+ <use figures/circuit_1_red.jpg>
+Package pdftex.def Info: figures/circuit_1_red.jpg used on input line 454.
+(pdftex.def)             Requested size: 241.49895pt x 160.99046pt.
+ [19 <./figures/clamps.jpg> <./figures/circuit_1_red.jpg>] <figures/assembly.jpg, id=362, 1096.095pt x 513.92pt>
+File: figures/assembly.jpg Graphic file (type jpg)
+ <use figures/assembly.jpg>
+Package pdftex.def Info: figures/assembly.jpg used on input line 479.
+(pdftex.def)             Requested size: 241.49895pt x 113.22742pt.
+ <figures/sewing.jpg, id=363, 1084.05pt x 722.7pt>
+File: figures/sewing.jpg Graphic file (type jpg)
+ <use figures/sewing.jpg>
+Package pdftex.def Info: figures/sewing.jpg used on input line 488.
+(pdftex.def)             Requested size: 241.49895pt x 160.99046pt.
+ [20 <./figures/assembly.jpg>] <figures/martin_recon.jpg, id=369, 1368.11125pt x 893.3375pt>
+File: figures/martin_recon.jpg Graphic file (type jpg)
+ <use figures/martin_recon.jpg>
+Package pdftex.def Info: figures/martin_recon.jpg used on input line 504.
+(pdftex.def)             Requested size: 241.49895pt x 157.68588pt.
+ [21 <./figures/sewing.jpg> <./figures/martin_recon.jpg>] [22] (/usr/local/texlive/2014/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2014/03/04 1.5c listings language file
 )
-Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on input line 388.
+Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on input line 525.
  (../recon/recon.m
-Overfull \hbox (69.00421pt too wide) in paragraph at lines 22--23
-[][][][][][][][][][][][][][][][] 
+Overfull \hbox (9.0036pt too wide) in paragraph at lines 22--23
+[][][][][][][][][][][][][][] 
  []
 
 
@@ -1366,68 +1422,73 @@ Overfull \hbox (105.00458pt too wide) in paragraph at lines 31--33
  []
 
 
-Overfull \hbox (33.00385pt too wide) in paragraph at lines 35--36
+Overfull \hbox (39.0039pt too wide) in paragraph at lines 35--36
+[][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (27.00378pt too wide) in paragraph at lines 37--39
 [][][][][][][][][][][][][][] 
  []
 
-LaTeX Font Info:    Try loading font information for OMS+lmr on input line 39.
+LaTeX Font Info:    Try loading font information for OMS+lmr on input line 42.
 (/usr/local/texlive/2014/texmf-dist/tex/latex/lm/omslmr.fd
 File: omslmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Font shape `OMS/lmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 39.
+(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 42.
 
-Overfull \hbox (69.00421pt too wide) in paragraph at lines 39--40
+Overfull \hbox (69.00421pt too wide) in paragraph at lines 42--43
 [][][][][][][][][][][][][][][][] 
  []
 
-[17]
-Overfull \hbox (9.0036pt too wide) in paragraph at lines 57--58
+[23]
+Overfull \hbox (9.0036pt too wide) in paragraph at lines 60--61
 [][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (45.00397pt too wide) in paragraph at lines 82--83
+Overfull \hbox (45.00397pt too wide) in paragraph at lines 85--86
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (33.00385pt too wide) in paragraph at lines 83--84
+Overfull \hbox (33.00385pt too wide) in paragraph at lines 86--87
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (3.00354pt too wide) in paragraph at lines 92--93
+Overfull \hbox (3.00354pt too wide) in paragraph at lines 95--96
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
-[18]) [19]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 389.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 389.
+[24]) [25]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 526.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 526.
  (./progress_report.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 389.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 389.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 526.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 526.
 Package rerunfilecheck Info: File `progress_report.out' has not changed.
-(rerunfilecheck)             Checksum: 6F5F815A4F32406439D0395B85CA67BF;2403.
+(rerunfilecheck)             Checksum: 944DDAF212E3DB026FAB73C98806D3A0;2884.
 
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 389.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 526.
  ) 
 Here is how much of TeX's memory you used:
- 31979 strings out of 493117
- 630736 string characters out of 6135433
- 811792 words of memory out of 5000000
- 34639 multiletter control sequences out of 15000+600000
- 82532 words of font info for 118 fonts, out of 8000000 for 9000
+ 32058 strings out of 493117
+ 632177 string characters out of 6135433
+ 812219 words of memory out of 5000000
+ 34674 multiletter control sequences out of 15000+600000
+ 83113 words of font info for 125 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  57i,18n,65p,10418b,2297s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2014/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/local/texlive/2014/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/local/texlive/2014/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/usr/local/texlive/2014/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}</usr/local/texlive/2014/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/lm/lmmi7.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/lm/lmr17.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/lm/lmr7.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/lm/lmri10.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/lm/lmsy7.pfb>
-Output written on progress_report.pdf (19 pages, 2313204 bytes).
+Output written on progress_report.pdf (25 pages, 3452114 bytes).
 PDF statistics:
- 507 PDF objects out of 1000 (max. 8388607)
- 435 compressed objects within 5 object streams
- 180 named destinations out of 1000 (max. 500000)
- 28618 words of extra memory for PDF output out of 29859 (max. 10000000)
+ 582 PDF objects out of 1000 (max. 8388607)
+ 497 compressed objects within 5 object streams
+ 203 named destinations out of 1000 (max. 500000)
+ 28709 words of extra memory for PDF output out of 29859 (max. 10000000)
 

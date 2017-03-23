@@ -1,6 +1,6 @@
 load mri
-%scanned_data = recon('../pictures/');
-%Ds = smooth3(255*scanned_data.volume());
+scanned_data = recon('./captures/');
+Ds = smooth3(255*scanned_data.volume());
 figure
 isosurface(Ds,5)
 rotate3d on
