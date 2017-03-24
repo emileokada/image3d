@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=latex 2015.3.22)  6 OCT 2016 20:56
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=latex 2015.3.22)  24 MAR 2017 09:45
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -533,8 +533,11 @@ File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 )
 File: CUnibig.eps Graphic file (type eps)
  <CUnibig.eps>
+File: figs/NEW_CMIH.ps Graphic file (type eps)
+
+<figs/NEW_CMIH.ps>
 Overfull \hbox (94.0979pt too wide) in paragraph at lines 17--18
-[][][][] [][] [][]
+[][][][][] [][] [][]
  []
 
 
@@ -604,12 +607,12 @@ File: figs/results.ps Graphic file (type eps)
 
 ] (./poster.aux) ) 
 Here is how much of TeX's memory you used:
- 8768 strings out of 493118
- 155743 string characters out of 6135459
- 216355 words of memory out of 5000000
- 12094 multiletter control sequences out of 15000+600000
+ 8770 strings out of 493118
+ 155771 string characters out of 6135459
+ 216598 words of memory out of 5000000
+ 12095 multiletter control sequences out of 15000+600000
  28463 words of font info for 74 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  50i,7n,44p,401b,368s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on poster.dvi (1 page, 7068 bytes).
+Output written on poster.dvi (1 page, 7244 bytes).

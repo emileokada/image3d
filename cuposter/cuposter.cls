@@ -322,6 +322,13 @@
       %% http://www.cam.ac.uk/localusersonly/cambuniv/docstyle/
       \includegraphics[width=20cm]{CUnibig.eps}
     }%
+    \rput(\shieldoffset,-4.7in){
+      %%SJE: add Cambridge Shield.
+      %% \resizebox{5in}{!}{\includeshield}
+      %% CUnibig downloaded from
+      %% http://www.cam.ac.uk/localusersonly/cambuniv/docstyle/
+      \includegraphics[width=15cm]{figs/NEW_CMIH.ps}
+    }%
   \fi  
   % Put in the logo
   \if@posterancnoback \else
